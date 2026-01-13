@@ -18,9 +18,19 @@ $events = reservations_events($db);
     <link rel="stylesheet" href="/assets/app.css">
 </head>
 <body>
-
-<?php include __DIR__ . '/../includes/nav.php'; ?>
-
+<header>
+    <div class="logo_in_header">
+        <img class="logo" src="Images/Logo-BMN-De-Klerk.jpg" alt="Logo BMN de klerk">
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"></button> <!-- Hier komt nog een foto -->
+        <div class="dropdown-content">
+            <a href="">Uitloggen</a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+    </div>
+</header>
 <main>
 
 </main>
