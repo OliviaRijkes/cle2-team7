@@ -21,5 +21,5 @@ if (!$db) {
     exit;
 }
 
-// Zorg dat tekens correct worden opgeslagen (UTF-8)
+// Zorg dat tekens correct worden opgeslagen
 mysqli_set_charset($db, 'utf8mb4');
