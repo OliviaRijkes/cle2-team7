@@ -3,6 +3,8 @@ session_start();
 if (!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
+//gebruiken we de naam van de persoon op de hoofdpagina? ->(welkom <=$firstname>)
+//$firstname = $_SESSION['firstname']
 ?>
 <!doctype html>
 <html lang="nl">
