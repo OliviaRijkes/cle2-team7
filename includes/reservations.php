@@ -1,67 +1,73 @@
 <?php
-// includes/reservations.php
+// includes/reservations.php (mysqli)
 
-function reservation_save_from_post(PDO $pdo): void {
-
-    // Controle: alleen doorgaan als dit een "save"-actie is
+function reservation_save_from_post($db): void
+{
+    // Alleen doorgaan als dit een save-actie is
     if (($_POST['a'] ?? '') !== 's') {
-        return; // geen reservering opslaan
+        return;
     }
 
-    // Invoer ophalen uit het formulier
+    // Invoer ophalen
     $room  = (int)($_POST['r'] ?? 0);
     $title = trim((string)($_POST['t'] ?? ''));
     $start = (string)($_POST['s'] ?? '');
     $end   = (string)($_POST['e'] ?? '');
 
-    // Basisvalidatie: alles moet ingevuld zijn
+    // Basisvalidatie
     if ($room <= 0 || $title === '' || $start === '' || $end === '') {
         header('Location: /index.php');
         exit;
     }
 
-    // Controle: eindtijd moet na starttijd liggen
     if (strtotime($end) <= strtotime($start)) {
         header('Location: /index.php');
         exit;
     }
 
-    // Datum/tijd omzetten naar MySQL formaat
-    // HTML input: 2026-01-13T10:00
-    // MySQL:      2026-01-13 10:00:00
+    // datetime-local -> MySQL
     $startDb = str_replace('T', ' ', $start) . ':00';
     $endDb   = str_replace('T', ' ', $end) . ':00';
 
-    // Reservering opslaan in de database
-    $stmt = $pdo->prepare("
+    // Prepared statement
+    $stmt = mysqli_prepare($db, "
         INSERT INTO reservations (room_id, title, start_datetime, end_datetime)
         VALUES (?, ?, ?, ?)
     ");
-    $stmt->execute([$room, $title, $startDb, $endDb]);
+
+    if (!$stmt) {
+        header('Location: /index.php');
+        exit;
+    }
+
+    // i = int, s = string
+    mysqli_stmt_bind_param($stmt, "isss", $room, $title, $startDb, $endDb);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 
     // Redirect
     header('Location: /index.php');
     exit;
 }
 
-/**
- * Haalt alle reserveringen op uit de database en zet ze om
- */
-function reservations_events(PDO $pdo): array {
 
-    // Reserveringen ophalen + gekoppelde zaalgegevens
-    $rows = $pdo->query("
+function reservations_events($db): array
+{
+    $sql = "
         SELECT r.title, r.start_datetime, r.end_datetime,
                rm.name AS room_name, rm.color AS room_color
         FROM reservations r
         JOIN rooms rm ON rm.id = r.room_id
         ORDER BY r.start_datetime
-    ")->fetchAll();
+    ";
+
+    $result = mysqli_query($db, $sql);
+    if (!$result) {
+        return [];
+    }
 
     $events = [];
-
-    // Elke database-rij omzetten naar een event-array
-    foreach ($rows as $x) {
+    while ($x = mysqli_fetch_assoc($result)) {
         $events[] = [
             'title' => $x['title'] . ' (' . $x['room_name'] . ')',
             'start' => $x['start_datetime'],
@@ -71,6 +77,6 @@ function reservations_events(PDO $pdo): array {
         ];
     }
 
-    // Alle events teruggeven aan de pagina / frontend
+    mysqli_free_result($result);
     return $events;
 }

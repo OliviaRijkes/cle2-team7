@@ -2,32 +2,24 @@
 // includes/db.php
 
 
+
 // Database-instellingen
-$host = 'localhost';               // Database server
-$db   = 'bouw_reserveringen';      // Database naam
-$user = 'root';                    // Gebruikersnaam
-$pass = '';                        // Wachtwoord (leeg voor lokaal)
+$host       = 'localhost';
+$dbuser     = 'root';
+$dbpassword = '';
+$database   = 'bouw_reserveringen';
 
-// Probeer verbinding te maken met de database
-try {
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$db;charset=utf8mb4", // DSN
-        $user,
-        $pass,
-        [
-            // Gooi exceptions bij fouten (beter debuggen)
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+// Maak verbinding met de database
+$db = mysqli_connect($host, $dbuser, $dbpassword, $database);
 
-            // Resultaten standaard als associatieve array
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]
-    );
-} catch (Exception $e) {
-    // Als de verbinding faalt:
-    // - stuur een HTTP 500 error
-    // - toon een foutmelding
+// Controleer of de verbinding is gelukt
+if (!$db) {
+    // HTTP 500 foutmelding bij verbindingsprobleem
     http_response_code(500);
-    echo "Database fout ❌<br>";
-    echo htmlspecialchars($e->getMessage());
+    echo "Database fout! Uh oh<br>";
+    echo htmlspecialchars(mysqli_connect_error());
     exit;
 }
+
+// Zorg dat tekens correct worden opgeslagen (UTF-8)
+mysqli_set_charset($db, 'utf8mb4');
