@@ -1,9 +1,8 @@
 <?php
 session_start();
-require __DIR__ . '/../includes/db.php';
 require __DIR__ . '/../includes/auth.php';
 
-if ($_POST['submit']) {
+if (isset($_POST['submit'])) {
     $email = htmlentities($_POST['email']);
     //validate
     if ($email == "") {
@@ -16,6 +15,7 @@ if ($_POST['submit']) {
     }
     if (!isset($errors)) {
         //db
+        require_once __DIR__ . '/../includes/db.php';
         $emailDb = mysqli_escape_string($db, $_POST['email']);
         $passwordDb = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $query = "SELECT * FROM users WHERE email = '$emailDb'";
@@ -48,6 +48,14 @@ if ($_POST['submit']) {
     <title>Login</title>
 </head>
 <body>
-
+<form action="" method="post">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" value="<?=$email ??''?>">
+    <p>emailerr:<?=$errors['email']??''?></p>
+    <label for="password">Wachtwoord</label>
+    <input type="text" name="password" id="password" value="<?=$password ??''?>">
+    <p>pwerr:</p>
+    <button type="submit">Log in</button>
+</form>
 </body>
 </html>
