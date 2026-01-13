@@ -4,3 +4,6 @@ CREATE TABLE rooms (
                        color VARCHAR(20),
                        is_active TINYINT(1)
 );
+
+INSERT INTO rooms (name, color, is_active) VALUES
+                                               ('Vergaderruimte', '#1e90ff', 5),
