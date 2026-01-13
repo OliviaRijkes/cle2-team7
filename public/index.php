@@ -1,12 +1,14 @@
 <?php
-/** @var PDO $pdo */
+// public/index.php
+
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/rooms.php';
 require_once __DIR__ . '/../includes/reservations.php';
 
-// Backend staat klaar, maar wordt nog niet gebruikt in UI
-$rooms  = rooms_list($pdo);
-$events = reservations_events($pdo);
+reservation_save_from_post($db);
+
+$rooms  = rooms_list($db);
+$events = reservations_events($db);
 ?>
 <!doctype html>
 <html lang="nl">
