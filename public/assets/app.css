@@ -94,7 +94,7 @@ header section {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: var(--primary-blue-dark);
 }
 
 .login-container {
