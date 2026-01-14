@@ -1,3 +1,9 @@
+header section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10vw;
+}
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
@@ -34,13 +40,19 @@ a:link, a:visited {
     translate: 6px;
 }
 
+.dropdown_in_header {
+    display: flex;
+    margin-top: 2vw;
+}
 .logo_in_header {
     width: 10vw;
     display: flex;
 
 }
+
 .logo {
     width: 100%;
+    object-fit: contain;
 }
 
 .dropbtn {
@@ -72,7 +84,7 @@ a:link, a:visited {
 
 .dropdown-content a:hover { background: #ddd;}
 .dropdown:hover .dropdown-content { display: block;}
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: var(--primary-blue-dark);}
 
 .login-container {
     margin: 0 5vw;
