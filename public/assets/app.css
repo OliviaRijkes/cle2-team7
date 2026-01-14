@@ -34,6 +34,17 @@ a:link, a:visited {
     translate: 6px;
 }
 
+header section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10vw;
+}
+
+.dropdown_in_header {
+    display: flex;
+    margin-top: 2vw;
+}
 .logo_in_header {
     width: 10vw;
     display: flex;
@@ -42,6 +53,7 @@ a:link, a:visited {
 
 .logo {
     width: 100%;
+    object-fit: contain;
 }
 
 .dropbtn {
