@@ -39,13 +39,14 @@ $rooms = rooms_list($db);
 <main>
     <section class="agenda_content">
         <div class="room_info">
-            <p class="room_header">zaaloverzicht</p>
-            <p class="room_stuff">zaal spullen</p>
+            <div class="room_header">zaaloverzicht</div>
+            <div class="room_stuff">zaal spullen</div>
+
         </div>
 
         <div class="agenda">
-            <p class="filter_view">filter view</p>
-            <p class="actual_agenda">agenda</p>
+            <div class="filter_view">filter view</div>
+            <div class="actual_agenda">agenda</div>
         </div>
 
     </section>

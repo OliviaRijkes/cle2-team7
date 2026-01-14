@@ -135,7 +135,7 @@ a:link, a:visited {
     width: 20vw;
 }
 
-.form-submit {
+.button-submit {
     display: flex;
     justify-content: end;
 }
@@ -153,6 +153,7 @@ input[type=submit] {
     display: flex;
     justify-content: space-between;
     margin: 50px;
+
 }
 
 .room_info {
@@ -160,6 +161,7 @@ input[type=submit] {
     flex-direction: column;
     align-items: center;
     width: 30vw;
+    gap: 10px;
 }
 
 .room_header {
@@ -184,6 +186,7 @@ input[type=submit] {
     display: flex;
     flex-direction: column;
     width: 60vw;
+    gap: 10px;
 }
 
 .filter_view {
@@ -194,7 +197,7 @@ input[type=submit] {
     align-content: center;
     background-size: contain;
     width: 40vw;
-    padding: 20px 0;
+    padding: 20px 0px;
     border-width: 1px;
     border-style: solid;
 }
@@ -204,5 +207,5 @@ input[type=submit] {
     height: 40vw;
     border-width: 1px;
     border-style: solid;
-    margin: 0;
+
 }
