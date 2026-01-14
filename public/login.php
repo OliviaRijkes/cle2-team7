@@ -1,6 +1,5 @@
 <?php
 session_start();
-require __DIR__ . '/../includes/auth.php';
 
 if (isset($_POST['submit'])) {
     $email = htmlentities($_POST['email']);
@@ -24,8 +23,11 @@ if (isset($_POST['submit'])) {
         if ($user) {
             if (password_verify($_POST['password'], $user['password'])) {
                 //the needed data for site exploration and authorization
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['admin'] = $user['admin'];
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['email'] = htmlentities($user['email']);
+                $_SESSION['firstname'] = htmlentities($user['firstname']);
+                $_SESSION['lastname'] = htmlentities($user['lastname']);
+                $_SESSION['is_admin'] = $user['is_admin'];
                 //index
                 header('Location: index.php');
             } else {
@@ -54,8 +56,8 @@ if (isset($_POST['submit'])) {
     <p>emailerr:<?=$errors['email']??''?></p>
     <label for="password">Wachtwoord</label>
     <input type="text" name="password" id="password" value="<?=$password ??''?>">
-    <p>pwerr:</p>
-    <button type="submit">Log in</button>
+    <p>pwerr:<?=$errors['password']??''?></p>
+    <button type="submit" name="submit">Log in</button>
 </form>
 </body>
 </html>
