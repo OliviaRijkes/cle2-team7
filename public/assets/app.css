@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --primary-blue-dark: #003256;
+    --primary-blue-middle: #005EA4;
+    --primary-blue-light: #09AEE6;
+    --primary-blue-lightest: #44BFEA;
+    --primary-white-background: #E8E5DF;
+    --primary-brown: #968462;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+
+a:link, a:visited {
+    color:white;
+    text-decoration: none;
+}
+
+.button-blue {
+    width: 120px;
+    text-align: center;
+    background-image: linear-gradient(to right, #42aed5, var(--primary-blue-light) 95%);
+    background-color: var(--primary-blue-lightest);
+    border-left: 7px solid var(--primary-blue-lightest);
+    padding: 10px;
+    transition: translate 0.3s;
+}
+
+.button-blue:hover {
+    background-image: none;
+    translate: 6px;
+}
 
 .logo_in_header {
     width: 10vw;
@@ -9,7 +44,7 @@
 }
 
 .dropbtn {
-    background-color: #09AEE6;
+    background-color: var(--primary-blue-light);
     width: 4vw;
     height: 4vw;
     border-radius: 50%;
@@ -22,7 +57,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #E8E5DF;
+    background-color: var(--primary-white-background);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -38,3 +73,66 @@
 .dropdown-content a:hover { background: #ddd;}
 .dropdown:hover .dropdown-content { display: block;}
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.login-container {
+    margin: 0 5vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login-medewerker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 40vw;
+    background-color: var(--primary-blue-light);
+}
+
+.login-email {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    margin: 5px;
+}
+
+.login-email-align-left {
+    text-align: end;
+    width: 20vw;
+    padding-right: 5px;
+}
+
+.login-email-align-right {
+    width: 20vw;
+}
+
+.login-password {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    margin: 5px;
+}
+
+.login-password-align-left {
+    text-align: end;
+    width: 20vw;
+    padding-right: 5px;
+}
+
+.login-password-align-right {
+    width: 20vw;
+}
+
+.button-submit {
+    display: flex;
+    justify-content: end;
+}
+
+input[type=submit] {
+    font-family: "Open Sans", sans-serif;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid var(--primary-blue-dark);
+    background-color: var(--primary-blue-lightest);
+}

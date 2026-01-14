@@ -50,14 +50,36 @@ if (isset($_POST['submit'])) {
     <title>Login</title>
 </head>
 <body>
-<form action="" method="post">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" value="<?=$email ??''?>">
-    <p>emailerr:<?=$errors['email']??''?></p>
-    <label for="password">Wachtwoord</label>
-    <input type="text" name="password" id="password" value="<?=$password ??''?>">
-    <p>pwerr:<?=$errors['password']??''?></p>
-    <button type="submit" name="submit">Log in</button>
-</form>
+<main>
+    <section>
+        <div class="login-container">
+            <div class="login-medewerker">
+                <p>Inloggen medewerker:</p>
+                <form action="" method="post">
+                    <div class="login-email">
+                        <div class="login-email-align-left">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="login-email-align-right">
+                            <input type="text" name="email" id="email" value="<?=$email ??''?>">
+                        </div>
+                    </div>
+                    <div class="login-password">
+                        <div class="login-password-align-left">
+                            <label for="password">Wachtwoord:</label>
+                        </div>
+                        <div class="login-password-align-right">
+                            <input type="text" name="password" id="password" value="<?=$password ??''?>">
+                        </div>
+                    </div>
+                    <div class="button-submit">
+                        <input type="submit" name="submit" value="Log in">
+                    </div>
+                    <p>emailerr:<?=$errors['email']??''?></p>
+                    <p>pwerr:<?=$errors['password']??''?></p>
+                </form>
+            </div>
+    </section>
+</main>
 </body>
 </html>
