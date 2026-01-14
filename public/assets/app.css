@@ -20,6 +20,10 @@ body {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 a:link, a:visited {
     color:white;
     text-decoration: none;
@@ -144,7 +148,13 @@ a:link, a:visited {
     width: 15vw;
 }
 
-.button-submit {
+.form-errors {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.form-submit {
     display: flex;
     justify-content: end;
 }

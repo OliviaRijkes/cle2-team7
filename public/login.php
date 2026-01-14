@@ -70,14 +70,16 @@ if (isset($_POST['submit'])) {
                             <label for="password">Wachtwoord:</label>
                         </div>
                         <div class="login-password-align-right">
-                            <input type="text" name="password" id="password" value="<?=$password ??''?>">
+                            <input type="password" name="password" id="password" value="<?=$password ??''?>">
                         </div>
                     </div>
-                    <div class="button-submit">
+                    <div class="form-errors">
+                        <p><?=$errors['email']??''?></p>
+                        <p><?=$errors['password']??''?></p>
+                    </div>
+                    <div class="form-submit">
                         <input type="submit" name="submit" value="Log in">
                     </div>
-                    <p>emailerr:<?=$errors['email']??''?></p>
-                    <p>pwerr:<?=$errors['password']??''?></p>
                 </form>
             </div>
     </section>
