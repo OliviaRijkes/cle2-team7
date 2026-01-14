@@ -148,10 +148,6 @@ input[type=submit] {
     background-color: var(--primary-blue-lightest);
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-}
 
 .agenda_content {
     display: flex;
