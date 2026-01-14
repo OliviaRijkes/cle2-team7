@@ -9,13 +9,13 @@ require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/rooms.php';
 require_once __DIR__ . '/../includes/reservations.php';
 
-$rooms  = rooms_list($db);
+$rooms = rooms_list($db);
 ?>
 <!doctype html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Agenda</title>
     <link rel="stylesheet" href="/assets/app.css">
 </head>
 <body>
@@ -37,7 +37,18 @@ $rooms  = rooms_list($db);
     </section>
 </header>
 <main>
+    <section class="agenda_content">
+        <div class="room_info">
+            <p class="room_header">zaaloverzicht</p>
+            <p class="room_stuff">zaal spullen</p>
+        </div>
 
+        <div class="agenda">
+            <p class="filter_view">filter view</p>
+            <p class="actual_agenda">agenda</p>
+        </div>
+
+    </section>
 </main>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
