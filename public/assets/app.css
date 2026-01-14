@@ -93,35 +93,43 @@ a:link, a:visited {
 .login-email {
     display: flex;
     flex-direction: row;
-    width: 40vw;
+    width: 60vw;
     margin: 5px;
 }
 
 .login-email-align-left {
     text-align: end;
-    width: 20vw;
+    width: 30vw;
     padding-right: 5px;
 }
 
 .login-email-align-right {
-    width: 20vw;
+    width: 30vw;
+}
+
+.login-email-align-right input {
+    width: 15vw;
 }
 
 .login-password {
     display: flex;
     flex-direction: row;
-    width: 40vw;
+    width: 60vw;
     margin: 5px;
 }
 
 .login-password-align-left {
     text-align: end;
-    width: 20vw;
+    width: 30vw;
     padding-right: 5px;
 }
 
 .login-password-align-right {
-    width: 20vw;
+    width: 30vw;
+}
+
+.login-password-align-right input {
+    width: 15vw;
 }
 
 .button-submit {
