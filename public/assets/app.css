@@ -211,8 +211,9 @@ input[type=submit] {
     align-content: center;
     background-size: contain;
     width: 32vw;
-    padding: 20px 0px;
+    padding-bottom: 20px;
     font-family: Bahnschrift;
+
 
 }
 
@@ -222,6 +223,29 @@ input[type=submit] {
     border-width: 1px;
     border-style: solid;
 
+}
+
+.actual_rooms {
+    
+}
+
+.actual_rooms a {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-left: 2vw;
+    border-left: 7px solid #968768;
+    background-color: #cbc3b4;
+}
+
+.actual_rooms a:hover {
+    background-color: #968768;
+    border-left: 7px solid #968768;
+}
+
+.actual_filter {
+    display: flex;
+    justify-content: center;
 }
 
 .button_day {

@@ -42,8 +42,12 @@ $rooms = rooms_list($db);
             <div class="room_header">Reserveringen</div>
             <div class="room_stuff">
                 <h2 class="heada">Zalen overzicht</h2>
+                <div class="actual_rooms">
+                    <?php for ($i = 0; $i < 6; $i++) { ?>
+                        <a>Zaal <?= $i + 1 ?></a>
+                    <?php } ?></div>
+                <div class="actual_filter">Filter</div>
             </div>
-
         </div>
 
         <div class="agenda">
