@@ -98,7 +98,7 @@ header section {
 }
 
 .login-container {
-    margin: 0 5vw;
+    margin: 10vh 10vw;
     display: flex;
     justify-content: space-evenly;
 }
@@ -109,7 +109,7 @@ header section {
     justify-content: center;
     align-items: center;
     width: 80vw;
-    height: 40vw;
+    height: 80vh;
     background-color: var(--primary-blue-light);
 }
 
@@ -147,7 +147,7 @@ header section {
     width: 20vw;
 }
 
-.button-submit {
+.form-submit {
     display: flex;
     justify-content: end;
 }
