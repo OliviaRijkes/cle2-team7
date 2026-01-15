@@ -39,8 +39,10 @@ $rooms = rooms_list($db);
 <main>
     <section class="agenda_content">
         <div class="room_info">
-            <div class="room_header">zaaloverzicht</div>
-            <div class="room_stuff">zaal spullen</div>
+            <div class="room_header">Reserveringen</div>
+            <div class="room_stuff">
+                <h2 class="heada">Zalen overzicht</h2>
+            </div>
 
         </div>
 
