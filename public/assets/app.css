@@ -174,25 +174,28 @@ input[type=submit] {
     flex-direction: column;
     align-items: center;
     width: 30vw;
-    gap: 10px;
 }
 
 .room_header {
-    background-color: rgb(9, 174, 230);
+    background-color: #003256;
     height: 6vh;
-    width: 15vh;
+    width: 14vw;
     display: flex;
     align-items: center;
-    border-width: 1px;
-    border-style: solid;
+    color: white;
+    justify-content: center;
+    font-family: Bahnschrift;
 }
 
 .room_stuff {
-    background-color: rgb(9, 174, 230);
-    height: 30vw;
-    width: 15vw;
-    border-width: 1px;
-    border-style: solid;
+    background-color: #e8e5df;
+    height: 32vw;
+    width: 24vw;
+    font-family: Bahnschrift;
+}
+
+.heada {
+    margin-left: 2vw;
 }
 
 .agenda {
@@ -210,6 +213,8 @@ input[type=submit] {
     background-size: contain;
     width: 32vw;
     padding: 20px 0px;
+    font-family: Bahnschrift;
+
 }
 
 .actual_agenda {
@@ -239,7 +244,6 @@ input[type=submit] {
 }
 
 .button_month {
-
     background-color: #e8e5df;
     border-left: 7px solid #09aee6;
     width: 14vw;
