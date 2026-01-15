@@ -97,6 +97,18 @@ header section {
     background-color: var(--primary-blue-dark);
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: #e8e5df;
+}
+
+.footer-copyright {
+    color: var(--primary-blue-dark);
+    padding-left: 100px;
+}
+
 .login-container {
     margin: 10vh 10vw;
     display: flex;
