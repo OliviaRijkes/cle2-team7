@@ -45,6 +45,7 @@ header section {
     display: flex;
     margin-top: 2vw;
 }
+
 .logo_in_header {
     width: 10vw;
     display: flex;
@@ -204,14 +205,11 @@ input[type=submit] {
 .filter_view {
     display: flex;
     text-align: center;
-    justify-content: center;
-    background-color: rgb(9, 174, 230);
+    justify-content: space-around;
     align-content: center;
     background-size: contain;
-    width: 40vw;
+    width: 32vw;
     padding: 20px 0px;
-    border-width: 1px;
-    border-style: solid;
 }
 
 .actual_agenda {
@@ -220,4 +218,48 @@ input[type=submit] {
     border-width: 1px;
     border-style: solid;
 
+}
+
+.button_day {
+    background-color: #e8e5df;
+    border-left: 7px solid #09aee6;
+    width: 14vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_week {
+    background-color: #e8e5df;
+    border-left: 7px solid #09aee6;
+    width: 14vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_month {
+
+    background-color: #e8e5df;
+    border-left: 7px solid #09aee6;
+    width: 14vw;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_day:hover {
+    background-color: var(--primary-blue-lightest);
+    border-left: 7px solid var(--primary-blue-lightest);
+}
+
+.button_week:hover {
+    background-color: var(--primary-blue-lightest);
+    border-left: 7px solid var(--primary-blue-lightest);
+}
+
+.button_month:hover {
+    background-color: var(--primary-blue-lightest);
+    border-left: 7px solid var(--primary-blue-lightest);
 }

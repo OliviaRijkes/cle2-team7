@@ -45,7 +45,11 @@ $rooms = rooms_list($db);
         </div>
 
         <div class="agenda">
-            <div class="filter_view">filter view</div>
+            <div class="filter_view">
+                <a class="button_day">Dag</a>
+                <a class="button_week">Week</a>
+                <a class="button_month">Maand</a>
+            </div>
             <div class="actual_agenda">agenda</div>
         </div>
 
