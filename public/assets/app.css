@@ -302,3 +302,105 @@ input[type=submit] {
     background-color: var(--primary-blue-lightest);
     border-left: 7px solid var(--primary-blue-lightest);
 }
+
+@media (prefers-color-scheme: dark){
+    a:link, a:visited {
+        color: white;
+
+    }
+
+    .button-blue {
+        background-image: linear-gradient(to right, #42aed5, var(--primary-blue-light) 95%);
+        background-color: var(--primary-blue-lightest);
+    }
+
+    .dropbtn {
+        background-color: var(--primary-blue-light);
+    }
+
+    .dropdown-content {
+        background-color: var(--primary-white-background);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+        color: black;
+    }
+
+    .dropdown-content a:hover {
+        background: #ddd;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: var(--primary-blue-dark);
+    }
+
+    footer {
+        background-color: #e8e5df;
+    }
+
+    .footer-copyright {
+        color: var(--primary-blue-dark);
+    }
+
+    .login-medewerker {
+        background-color: var(--primary-blue-light);
+    }
+
+    input[type=submit] {
+        border: 1px solid var(--primary-blue-dark);
+        background-color: var(--primary-blue-lightest);
+    }
+
+    .room_header {
+        background-color: #003256;
+    }
+
+    .room_stuff {
+        background-color: #e8e5df;
+    }
+
+    .actual_agenda {
+        background-color: rgb(9, 174, 230);
+    }
+
+    .actual_rooms a {
+        border-left: 7px solid #968768;
+        background-color: #cbc3b4;
+    }
+
+    .actual_rooms a:hover {
+        background-color: #968768;
+        border-left: 7px solid #968768;
+    }
+
+    .button_day {
+        background-color: #e8e5df;
+        border-left: 7px solid #09aee6;
+    }
+
+    .button_week {
+        background-color: #e8e5df;
+        border-left: 7px solid #09aee6;
+    }
+
+    .button_month {
+        background-color: #e8e5df;
+        border-left: 7px solid #09aee6;
+    }
+
+    .button_day:hover {
+        background-color: var(--primary-blue-lightest);
+        border-left: 7px solid var(--primary-blue-lightest);
+    }
+
+    .button_week:hover {
+        background-color: var(--primary-blue-lightest);
+        border-left: 7px solid var(--primary-blue-lightest);
+    }
+
+    .button_month:hover {
+        background-color: var(--primary-blue-lightest);
+        border-left: 7px solid var(--primary-blue-lightest);
+    }
+}
