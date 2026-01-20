@@ -4,7 +4,7 @@
 function rooms_list($db): array
 {
     $sql = "
-        SELECT id, name, color
+        SELECT id, name, color, capacity
         FROM rooms
         WHERE is_active = 1
         ORDER BY id
