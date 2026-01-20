@@ -29,7 +29,7 @@ $rooms = rooms_list($db);
                 <button class="dropbtn"></button> <!-- Hier komt nog een foto -->
                 <nav class="dropdown-content">
                     <a href="logout.php">Uitloggen</a>
-                    <a href="">Mijn reserveringen</a>
+                    <a href="details.php?id=<?=$_SESSION['id']?>">Mijn reserveringen</a>
                     <a href="">Reserveringen veranderen</a>
                 </nav>
             </div>

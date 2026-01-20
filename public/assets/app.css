@@ -303,6 +303,21 @@ input[type=submit] {
     border-left: 7px solid var(--primary-blue-lightest);
 }
 
+.details_body {
+
+}
+
+.details_section {
+    background-color: #cbc3b4;
+    display: flex;
+    margin: 5vw 10vw;
+    height: 30vw;
+}
+
+.greetins {
+    padding: 0 15px;
+}
+
 @media (prefers-color-scheme: dark){
     a:link, a:visited {
         color: white;
