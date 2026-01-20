@@ -12,8 +12,6 @@ if (!isset($_SESSION["id"])) {
 // Database connectie
 require_once __DIR__ . '/../includes/db.php';
 
-// Log dat dit script wordt aangeroepen
-app_log("HIT reservations.create.php");
 
 // Ingelogde gebruiker (uit session)
 $userId = (int)($_SESSION['id'] ?? 0);
@@ -23,12 +21,6 @@ $roomId = (int)($_POST['room_id'] ?? 0);
 $title  = trim((string)($_POST['title'] ?? ''));
 $start  = (string)($_POST['start'] ?? '');
 $end    = (string)($_POST['end'] ?? '');
-
-// Log ontvangen POST-data (handig bij fouten)
-app_log(
-    "POST room_id={$roomId} user_id={$userId} title_len=" .
-    strlen($title) . " start={$start} end={$end}"
-);
 
 // Validatie: alles moet ingevuld zijn en geldige IDs hebben
 if ($userId <= 0 || $roomId <= 0 || $title === '' || $start === '' || $end === '') {
@@ -53,12 +45,6 @@ $stmt = mysqli_prepare(
      VALUES (?, ?, ?, ?, ?)"
 );
 
-// Check of prepare gelukt is
-if (!$stmt) {
-    app_log("FAIL prepare: " . mysqli_error($db));
-    header("Location: index.php");
-    exit;
-}
 
 // Koppel PHP-variabelen aan de placeholders
 mysqli_stmt_bind_param(
@@ -70,15 +56,6 @@ mysqli_stmt_bind_param(
     $startDb,
     $endDb
 );
-
-// Voer de query uit
-if (!mysqli_stmt_execute($stmt)) {
-    // Log fout bij uitvoeren
-    app_log("FAIL execute: " . mysqli_stmt_error($stmt));
-} else {
-    // Log succesvolle insert + nieuw ID
-    app_log("OK inserted id=" . mysqli_insert_id($db));
-}
 
 // Sluit de statement af
 mysqli_stmt_close($stmt);
