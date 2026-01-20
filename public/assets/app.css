@@ -1,3 +1,4 @@
+/* public/assets/app.css */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 :root {
@@ -7,11 +8,6 @@
     --primary-blue-lightest: #44BFEA;
     --primary-white-background: #E8E5DF;
     --primary-brown: #968462;
-
-    --dark-text: #e8e5df;
-    --dark-background: #2c373f;
-    --dark-brown: #546645
-
 }
 
 body {
@@ -19,25 +15,7 @@ body {
     margin: 0;
 }
 
-a:link, a:visited {
-    color: white;
-    text-decoration: none;
-}
-
-.button-blue {
-    width: 120px;
-    text-align: center;
-    background-image: linear-gradient(to right, #42aed5, var(--primary-blue-light) 95%);
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
-    padding: 10px;
-    transition: translate 0.3s;
-}
-
-.button-blue:hover {
-    background-image: none;
-    translate: 6px;
-}
+a:link, a:visited { color: white; text-decoration: none; }
 
 header section {
     display: flex;
@@ -46,22 +24,10 @@ header section {
     margin: 0 10vw;
 }
 
-.dropdown_in_header {
-    display: flex;
-    margin-top: 2vw;
-}
-/*logo*/
-.logo_in_header {
-    width: 10vw;
-    display: flex;
-}
+.dropdown_in_header { display: flex; margin-top: 2vw; }
+.logo_in_header { width: 10vw; display: flex; }
+.logo { width: 100%; object-fit: contain; }
 
-.logo {
-    width: 100%;
-    object-fit: contain;
-    border: 10px solid white;
-}
-/*dropdown*/
 .dropbtn {
     background-color: var(--primary-blue-light);
     width: 4vw;
@@ -70,18 +36,15 @@ header section {
     border: none;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+.dropdown { position: relative; display: inline-block; }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--primary-white-background);
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    min-width: 220px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
 .dropdown-content a {
@@ -91,24 +54,15 @@ header section {
     display: block;
 }
 
-.dropdown-content a:hover {
-    background: #ddd;
-}
+.dropdown-content a:hover { background: #ddd; }
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropbtn { background-color: var(--primary-blue-dark); }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: var(--primary-blue-dark);
-}
-
-/*footer*/
 footer {
     display: flex;
     align-items: center;
     height: 100px;
-    background-color: var(--primary-white-background);
+    background-color: #e8e5df;
 }
 
 .footer-copyright {
@@ -116,71 +70,7 @@ footer {
     padding-left: 100px;
 }
 
-/*login*/
-.login-container {
-    margin: 10vh 10vw;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.login-medewerker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    height: 80vh;
-    background-color: var(--primary-blue-light);
-}
-
-.login-email {
-    display: flex;
-    flex-direction: row;
-    width: 40vw;
-    margin: 5px;
-}
-
-.login-email-align-left {
-    text-align: end;
-    width: 20vw;
-    padding-right: 5px;
-}
-
-.login-email-align-right {
-    width: 20vw;
-}
-
-.login-password {
-    display: flex;
-    flex-direction: row;
-    width: 40vw;
-    margin: 5px;
-}
-
-.login-password-align-left {
-    text-align: end;
-    width: 20vw;
-    padding-right: 5px;
-}
-
-.login-password-align-right {
-    width: 20vw;
-}
-
-.form-submit {
-    display: flex;
-    justify-content: end;
-}
-
-input[type=submit] {
-    font-family: "Open Sans", sans-serif;
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid var(--primary-blue-dark);
-    background-color: var(--primary-blue-lightest);
-}
-
-/*agenda content*/
+/* Layout */
 .agenda_content {
     display: flex;
     justify-content: space-between;
@@ -190,15 +80,15 @@ input[type=submit] {
 .room_info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 30vw;
 }
 
+/* top-left blauwe balk "Reserveren" */
 .room_header {
     background-color: var(--primary-blue-dark);
-    margin: 0;
-    padding: 0 3px;
     height: 6vh;
+    width: 14vw;
     display: flex;
     align-items: center;
     color: white;
@@ -206,29 +96,89 @@ input[type=submit] {
     font-family: Bahnschrift;
 }
 
+/* linker paneel */
 .room_stuff {
     background-color: var(--primary-white-background);
+    height: 32vw;
     width: 24vw;
     font-family: Bahnschrift;
-}
-.room_stuff h3.heada {
-    margin-left: 10px;
+    padding-top: 10px;
 }
 
-.filter_view {
+.heada {
+    margin-left: 2vw;
+}
+
+/* Rooms list met "Ruilen" rechts */
+.actual_rooms { margin-top: 10px; }
+.rooms_list { width: 100%; }
+
+.room_row{
+    width: 100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 14px 16px;
+    color:#fff;
+    border: none;
+    cursor: pointer;
+}
+
+.room_left { font-weight:700; }
+.room_right { font-weight:700; }
+
+.room_row.is-brown { background:#9a8a6a; }
+.room_row.is-cyan  { background:#09AEE6; }
+.room_row.is-navy  { background:#003256; }
+
+.room_row:hover { filter: brightness(0.97); }
+
+.room_row.is-selected{
+    outline: 3px solid #00000055;
+    box-shadow: inset 0 0 0 3px #ffffff55;
+}
+
+.actual_filter {
     display: flex;
-    text-align: center;
-    justify-content: space-around;
-    align-content: center;
-    background-size: contain;
-    width: 32vw;
-    padding-bottom: 20px;
-    font-family: Bahnschrift;
-
-
+    justify-content: flex-start;
+    padding-left: 2vw;
+    padding-top: 18px;
+    font-weight: 700;
+    color: #000;
 }
 
-/*agenda*/
+.selected_room_line{
+    margin: 10px 0;
+    color:#000;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.reserve_form{
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.reserve_form input{
+    width: calc(100% - 0px);
+    margin-top: 8px;
+    padding: 8px 10px;
+    border: 1px solid rgba(0,0,0,0.25);
+}
+
+.reserve_btn{
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    background: var(--primary-blue-dark);
+    color: #fff;
+    font-weight: 700;
+}
+.reserve_btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* rechter paneel */
 .agenda {
     display: flex;
     flex-direction: column;
@@ -236,97 +186,98 @@ input[type=submit] {
     gap: 10px;
 }
 
-.actual_agenda {
-    background-color: rgb(9, 174, 230);
-    height: 40vw;
-    border-width: 1px;
-    border-style: solid;
-
-}
-
-.actual_rooms a {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-left: 2vw;
-    border-left: 7px solid var(--primary-brown);
-    background-color: #cbc3b4;
-}
-
-.actual_rooms a:hover {
-    background-color: var(--primary-brown);
-}
-
-.actual_filter {
+/* tabs boven kalender */
+.filter_view {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    padding: 15px 10px;
-    padding-left: 2vw;
-}
-.actual_filter h4{
-    margin: 0;
+    width: 32vw;
+    padding-bottom: 0;
+    font-family: Bahnschrift;
+    background: transparent;
 }
 
-/*agenda d/w/m filter*/
-.button_day, .button_week, .button_month {
+/* tab look (Maand/Week/Dag) */
+.tab_btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
     background-color: var(--primary-white-background);
     border-left: 7px solid var(--primary-blue-light);
-    width: 14vw;
-    height: 7vw;
+    width: 10.7vw;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000;
+    font-family: Bahnschrift;
+    font-size: 16px;
 }
 
-.button_day:hover, .button_week:hover, .button_month:hover {
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
+.tab_btn.is-active {
+    background-color: var(--primary-blue-light);
 }
 
-/*darkmode*/
-body.dark-mode{
-    background-color: black;
+.actual_agenda {
+    background-color: var(--primary-white-background);
+    height: 40vw;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.15);
+    padding: 0;
+    overflow: hidden;
 }
-.dark-mode{
 
-    h2,h3,h4, p, a{
-        color: var(--dark-text);
-    }
+/* FullCalendar */
+#calendar {
+    height: 100%;
+    background: var(--primary-white-background);
+}
 
-    .dropdown-content {
-        background-color: var(--dark-background);
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
+/* FullCalendar styling */
 
-    .dropdown-content a {
-        color: black;
-    }
+/* header row donkerblauw */
+.fc .fc-col-header {
+    background: var(--primary-blue-dark);
+}
 
-    .dropdown-content a:hover {
-        background: #ddd;
-    }
+.fc .fc-col-header-cell-cushion {
+    color: #fff;
+    font-family: Bahnschrift;
+    font-weight: 700;
+}
 
-    footer {
-        background-color: var(--dark-background);
-    }
+/* linker tijd-kolom donkerblauw */
+.fc .fc-timegrid-axis {
+    background: var(--primary-blue-dark);
+}
 
-    .room_stuff {
-        background-color: var(--dark-background);
-    }
+.fc .fc-timegrid-axis-cushion {
+    color: #fff;
+    font-size: 12px;
+}
 
-    .actual_rooms a {
-        border-left: 7px solid var(--dark-brown);
-        background-color: #cbc3b4;
-    }
+/* grid achtergrond */
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid-section > td,
+.fc .fc-timegrid-body,
+.fc .fc-timegrid-cols,
+.fc .fc-timegrid-col-frame {
+    background: var(--primary-white-background);
+}
 
-    .actual_rooms a:hover {
-        background-color: var(--dark-brown);
-        border-left: 7px solid var(--dark-brown);
-    }
+/* donkerblauwe kolomlijnen */
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th {
+    border-color: #1b5f86;
+}
 
-    .button_day, .button_week, .button_month {
-        background-color: var(--dark-background);
-        border-left: 7px solid var(--primary-blue-middle);
-    }
+.fc .fc-timegrid-slot {
+    border-color: #65bfe0;
+}
+
+.fc .fc-timegrid-divider { display: none; }
+
+
+.fc .fc-event {
+    border-width: 2px;
 }
