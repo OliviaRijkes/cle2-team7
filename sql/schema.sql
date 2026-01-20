@@ -67,7 +67,7 @@ CREATE TABLE reservations (
                               end_datetime DATETIME NOT NULL,
     -- Index op room_id sneller queries
                               INDEX (room_id),
-    -- Foreign key constraint(voorkomt reserveringen zonder geldige zaal):
+    -- Foreign key constraint:
                               CONSTRAINT fk_reservations_room
                                   FOREIGN KEY (room_id)
                                       REFERENCES rooms(id)
