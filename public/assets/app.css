@@ -7,6 +7,11 @@
     --primary-blue-lightest: #44BFEA;
     --primary-white-background: #E8E5DF;
     --primary-brown: #968462;
+
+    --dark-text: #e8e5df;
+    --dark-background: #2c373f;
+    --dark-brown: #546645
+
 }
 
 body {
@@ -45,17 +50,18 @@ header section {
     display: flex;
     margin-top: 2vw;
 }
+/*logo*/
 .logo_in_header {
     width: 10vw;
     display: flex;
-
 }
 
 .logo {
     width: 100%;
     object-fit: contain;
+    border: 10px solid white;
 }
-
+/*dropdown*/
 .dropbtn {
     background-color: var(--primary-blue-light);
     width: 4vw;
@@ -97,11 +103,12 @@ header section {
     background-color: var(--primary-blue-dark);
 }
 
+/*footer*/
 footer {
     display: flex;
     align-items: center;
     height: 100px;
-    background-color: #e8e5df;
+    background-color: var(--primary-white-background);
 }
 
 .footer-copyright {
@@ -109,6 +116,7 @@ footer {
     padding-left: 100px;
 }
 
+/*login*/
 .login-container {
     margin: 10vh 10vw;
     display: flex;
@@ -172,12 +180,11 @@ input[type=submit] {
     background-color: var(--primary-blue-lightest);
 }
 
-
+/*agenda content*/
 .agenda_content {
     display: flex;
     justify-content: space-between;
     margin: 50px;
-
 }
 
 .room_info {
@@ -188,9 +195,10 @@ input[type=submit] {
 }
 
 .room_header {
-    background-color: #003256;
+    background-color: var(--primary-blue-dark);
+    margin: 0;
+    padding: 0 3px;
     height: 6vh;
-    width: 14vw;
     display: flex;
     align-items: center;
     color: white;
@@ -199,21 +207,12 @@ input[type=submit] {
 }
 
 .room_stuff {
-    background-color: #e8e5df;
-    height: 32vw;
+    background-color: var(--primary-white-background);
     width: 24vw;
     font-family: Bahnschrift;
 }
-
-.heada {
-    margin-left: 2vw;
-}
-
-.agenda {
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
-    gap: 10px;
+.room_stuff h3.heada {
+    margin-left: 10px;
 }
 
 .filter_view {
@@ -229,6 +228,14 @@ input[type=submit] {
 
 }
 
+/*agenda*/
+.agenda {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    gap: 10px;
+}
+
 .actual_agenda {
     background-color: rgb(9, 174, 230);
     height: 40vw;
@@ -237,89 +244,58 @@ input[type=submit] {
 
 }
 
-.actual_rooms {
-    
-}
-
 .actual_rooms a {
     display: flex;
     flex-direction: column;
     padding: 10px;
     padding-left: 2vw;
-    border-left: 7px solid #968768;
+    border-left: 7px solid var(--primary-brown);
     background-color: #cbc3b4;
 }
 
 .actual_rooms a:hover {
-    background-color: #968768;
-    border-left: 7px solid #968768;
+    background-color: var(--primary-brown);
 }
 
 .actual_filter {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    padding: 15px 10px;
+    padding-left: 2vw;
+}
+.actual_filter h4{
+    margin: 0;
 }
 
-.button_day {
-    background-color: #e8e5df;
-    border-left: 7px solid #09aee6;
+/*agenda d/w/m filter*/
+.button_day, .button_week, .button_month {
+    background-color: var(--primary-white-background);
+    border-left: 7px solid var(--primary-blue-light);
     width: 14vw;
+    height: 7vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.button_week {
-    background-color: #e8e5df;
-    border-left: 7px solid #09aee6;
-    width: 14vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button_month {
-    background-color: #e8e5df;
-    border-left: 7px solid #09aee6;
-    width: 14vw;
-    height: 7vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button_day:hover {
+.button_day:hover, .button_week:hover, .button_month:hover {
     background-color: var(--primary-blue-lightest);
     border-left: 7px solid var(--primary-blue-lightest);
 }
 
-.button_week:hover {
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
+/*darkmode*/
+body.dark-mode{
+    background-color: black;
 }
+.dark-mode{
 
-.button_month:hover {
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
-}
-
-@media (prefers-color-scheme: dark){
-    a:link, a:visited {
-        color: white;
-
-    }
-
-    .button-blue {
-        background-image: linear-gradient(to right, #42aed5, var(--primary-blue-light) 95%);
-        background-color: var(--primary-blue-lightest);
-    }
-
-    .dropbtn {
-        background-color: var(--primary-blue-light);
+    h2,h3,h4, p, a{
+        color: var(--dark-text);
     }
 
     .dropdown-content {
-        background-color: var(--primary-white-background);
+        background-color: var(--dark-background);
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
@@ -331,76 +307,26 @@ input[type=submit] {
         background: #ddd;
     }
 
-    .dropdown:hover .dropbtn {
-        background-color: var(--primary-blue-dark);
-    }
-
     footer {
-        background-color: #e8e5df;
-    }
-
-    .footer-copyright {
-        color: var(--primary-blue-dark);
-    }
-
-    .login-medewerker {
-        background-color: var(--primary-blue-light);
-    }
-
-    input[type=submit] {
-        border: 1px solid var(--primary-blue-dark);
-        background-color: var(--primary-blue-lightest);
-    }
-
-    .room_header {
-        background-color: #003256;
+        background-color: var(--dark-background);
     }
 
     .room_stuff {
-        background-color: #e8e5df;
-    }
-
-    .actual_agenda {
-        background-color: rgb(9, 174, 230);
+        background-color: var(--dark-background);
     }
 
     .actual_rooms a {
-        border-left: 7px solid #968768;
+        border-left: 7px solid var(--dark-brown);
         background-color: #cbc3b4;
     }
 
     .actual_rooms a:hover {
-        background-color: #968768;
-        border-left: 7px solid #968768;
+        background-color: var(--dark-brown);
+        border-left: 7px solid var(--dark-brown);
     }
 
-    .button_day {
-        background-color: #e8e5df;
-        border-left: 7px solid #09aee6;
-    }
-
-    .button_week {
-        background-color: #e8e5df;
-        border-left: 7px solid #09aee6;
-    }
-
-    .button_month {
-        background-color: #e8e5df;
-        border-left: 7px solid #09aee6;
-    }
-
-    .button_day:hover {
-        background-color: var(--primary-blue-lightest);
-        border-left: 7px solid var(--primary-blue-lightest);
-    }
-
-    .button_week:hover {
-        background-color: var(--primary-blue-lightest);
-        border-left: 7px solid var(--primary-blue-lightest);
-    }
-
-    .button_month:hover {
-        background-color: var(--primary-blue-lightest);
-        border-left: 7px solid var(--primary-blue-lightest);
+    .button_day, .button_week, .button_month {
+        background-color: var(--dark-background);
+        border-left: 7px solid var(--primary-blue-middle);
     }
 }

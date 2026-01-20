@@ -6,11 +6,11 @@
         <div class="dropdown_in_header">
             <div class="dropdown">
                 <button class="dropbtn"></button> <!-- Hier komt nog een foto -->
-                <div class="dropdown-content">
+                <nav class="dropdown-content">
                     <a href="logout.php">Uitloggen</a>
                     <a href="">Mijn reserveringen</a>
                     <a href="">Reserveringen veranderen</a>
-                </div>
+                </nav>
             </div>
         </div>
     </section>

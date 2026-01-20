@@ -17,8 +17,10 @@ $rooms = rooms_list($db);
     <meta charset="UTF-8">
     <title>Agenda</title>
     <link rel="stylesheet" href="assets/app.css">
+    <script src="assets/darkmode.js"></script>
 </head>
 <body>
+<button onclick="darkToggle()">darkmode toggle</button>
 <header>
     <section>
         <div class="logo_in_header">
@@ -39,14 +41,23 @@ $rooms = rooms_list($db);
 <main>
     <section class="agenda_content">
         <div class="room_info">
-            <div class="room_header">Reserveringen</div>
+            <h2 class="room_header">Reserveringen</h2>
             <div class="room_stuff">
-                <h2 class="heada">Zalen overzicht</h2>
+                <h3 class="heada">Zalen overzicht</h3>
                 <div class="actual_rooms">
-                    <?php for ($i = 0; $i < 6; $i++) { ?>
-                        <a>Zaal <?= $i + 1 ?></a>
-                    <?php } ?></div>
-                <div class="actual_filter">Filter</div>
+<!--                foreach room-->
+                    <a href="">Zaal 1</a>
+                    <a href="">Zaal 2</a>
+                    <a href="">Zaal 3</a>
+                    <a href="">Zaal 4</a>
+
+                </div>
+                <div class="actual_filter">
+                    <h4>Filter</h4>
+                    <a href="">0 -----</a>
+                    <a href="">0 -----</a>
+                    <a href="">0 -----</a>
+                </div>
             </div>
         </div>
 
