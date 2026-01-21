@@ -40,6 +40,7 @@ header section {
 .logo_in_header {
     width: 10vw;
     display: flex;
+    border: white 2px solid;
 }
 
 .logo {
@@ -542,11 +543,17 @@ input[type=submit] {
 .fc .fc-event {
     border-width: 2px;
 }
+
 /*darkmode*/
-body.dark{
+body.dark {
     background-color: black;
 }
-.dark{
+
+.dark {
+    h2, p {
+        color: var(--dark-text);
+    }
+
     a:link, a:visited {
         color: white;
     }
@@ -556,16 +563,13 @@ body.dark{
     }
 
     .dropdown-content {
-        background-color: var(--primary-white-background);
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .dropdown-content a {
-        color: black;
+        background-color: var(--dark-background);
+        color: var(--dark-text);
     }
 
     .dropdown-content a:hover {
-        background: #ddd;
+        background-color: var(--dark-brown);
+        color: white;
     }
 
     .dropdown:hover .dropbtn {
@@ -573,40 +577,32 @@ body.dark{
     }
 
     footer {
-        background-color: #e8e5df;
-    }
-
-    .footer-copyright {
-        color: var(--primary-blue-dark);
-    }
-
-    /* top-left blauwe balk "Reserveren" */
-    .room_header {
-        background-color: var(--primary-blue-dark);
+        background-color: var(--dark-background);
     }
 
     /* linker paneel */
     .room_stuff {
-        background-color: var(--primary-white-background);
+        background-color: var(--dark-background);
     }
 
     .room_row {
-        color: #fff;
+        color: var(--dark-text);
     }
 
     .room_row.is-brown {
-        background: #9a8a6a;
+        background: var(--dark-brown);
     }
 
     .room_row.is-cyan {
-        background: #09AEE6;
+        background: var(--primary-blue-middle);
     }
 
     .room_row.is-navy {
-        background: #003256;
+        background: var(--primary-blue-dark);
     }
 
     .room_row:hover {
+        filter: brightness(1.50)
     }
 
     .room_row.is-selected {
@@ -614,67 +610,61 @@ body.dark{
         box-shadow: inset 0 0 0 3px #ffffff55;
     }
 
-    .actual_filter {
+    /*.actual_filter {
         color: #000;
     }
-
     .selected_room_line {
         color: #000;
     }
-
     .reserve_form input {
         border: 1px solid rgba(0, 0, 0, 0.25);
     }
-
     .reserve_btn {
         background: var(--primary-blue-dark);
         color: #fff;
-    }
+    }*/
 
     /* tabs boven kalender */
+
     .filter_view {
         background: transparent;
     }
 
     /* tab look (Maand/Week/Dag) */
     .tab_btn {
-        background-color: var(--primary-white-background);
-        border-left: 7px solid var(--primary-blue-light);
-        color: #000;
+        background-color: var(--dark-background);
+        border-left: 7px solid var(--primary-blue-middle);
+        color: var(--dark-text);
+    }
+
+    .tab_btn:hover {
+        background-color: var(--primary-blue-middle);
     }
 
     .tab_btn.is-active {
         background-color: var(--primary-blue-light);
     }
 
-    .actual_agenda {
-        background-color: var(--primary-white-background);
+    .actual_agenda, #calendar {
+        background-color: var(--dark-background);
     }
-
-    /* FullCalendar */
-    #calendar {
-        background: var(--primary-white-background);
-    }
-
-    /* FullCalendar styling */
 
     /* header row donkerblauw */
+
     .fc .fc-col-header {
         background: var(--primary-blue-dark);
     }
 
-    .fc .fc-col-header-cell-cushion {
-        color: #fff;
+    .fc .fc-col-header-cell-cushion, .fc .fc-timegrid-axis-cushion {
+        color: var(--dark-text);
     }
 
-    /* linker tijd-kolom donkerblauw */
-    .fc .fc-timegrid-axis {
+    /* linker tijd-kolom*/
+    .fc .fc-timegrid-axis, .fc-timegrid-slot-label {
         background: var(--primary-blue-dark);
+        color: var(--dark-text);
     }
 
-    .fc .fc-timegrid-axis-cushion {
-        color: #fff;
-    }
 
     /* grid achtergrond */
     .fc .fc-scrollgrid,
@@ -682,17 +672,16 @@ body.dark{
     .fc .fc-timegrid-body,
     .fc .fc-timegrid-cols,
     .fc .fc-timegrid-col-frame {
-        background: var(--primary-white-background);
+        background: var(--dark-background);
     }
 
-    /* donkerblauwe kolomlijnen */
+    /* kolomlijnen */
     .fc .fc-scrollgrid td,
     .fc .fc-scrollgrid th {
-        border-color: #1b5f86;
+        border-color: var(--primary-blue-middle);
     }
 
-    .fc .fc-timegrid-slot {
-        border-color: #65bfe0;
+    .fc-event-main{
+        background-color: var(--primary-blue-middle);
     }
-
 }
