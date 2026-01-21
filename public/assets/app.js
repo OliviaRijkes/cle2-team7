@@ -111,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.classList.add("is-selected");
 
                 // Gekozen zaal id opslaan (nodig voor submit) en click to show reservering
-                let z = '';
                 let y = roomIdInput.value;
                 if (roomIdInput) roomIdInput.value = String(r.id);
 
