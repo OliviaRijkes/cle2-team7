@@ -115,6 +115,11 @@ footer {
     width: 30vw;
 }
 
+.form_view {
+    display: flex;
+    flex-direction: row;
+}
+
 /* top-left blauwe balk "Reserveren" */
 .room_header {
     background-color: var(--primary-blue-dark);
@@ -150,7 +155,7 @@ footer {
 }
 
 .room_row {
-    width: 100%;
+    width: 24vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -208,6 +213,8 @@ footer {
 .reserve_form {
     padding-left: 2vw;
     padding-right: 2vw;
+    background-color: var(--primary-white-background);
+    z-index: 3;
 }
 
 .reserve_form input {
@@ -376,6 +383,7 @@ body.dark {
     }
 
     /* linker paneel */
+
     .room_stuff {
         background-color: var(--dark-background);
     }
@@ -426,6 +434,7 @@ body.dark {
     }
 
     /* tab look (Maand/Week/Dag) */
+
     .tab_btn {
         background-color: var(--dark-background);
         border-left: 7px solid var(--primary-blue-middle);
@@ -455,6 +464,7 @@ body.dark {
     }
 
     /* linker tijd-kolom*/
+
     .fc .fc-timegrid-axis, .fc-timegrid-slot-label {
         background: var(--primary-blue-dark);
         color: var(--dark-text);
@@ -462,6 +472,7 @@ body.dark {
 
 
     /* grid achtergrond */
+
     .fc .fc-scrollgrid,
     .fc .fc-scrollgrid-section > td,
     .fc .fc-timegrid-body,
@@ -471,12 +482,13 @@ body.dark {
     }
 
     /* kolomlijnen */
+
     .fc .fc-scrollgrid td,
     .fc .fc-scrollgrid th {
         border-color: var(--primary-blue-middle);
     }
 
-    .fc-event-main{
+    .fc-event-main {
         background-color: var(--primary-blue-middle);
     }
 }
