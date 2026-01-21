@@ -5,13 +5,8 @@ if (!isset($_SESSION["id"])) {
     header("Location: login.php");
     exit;
 }
-
-if(!isset($_GET['id']) || $_GET['id'] === '') {
-    header('Location: login.php');
-    exit;
-}
+$id = $_SESSION["id"];
 require_once '../includes/db.php';
-$id = $_GET['id'];
 $query = "SELECT rooms.name AS room_name, 
                  users.firstname AS user_name,
                  reservations.title, 
@@ -25,7 +20,6 @@ $result = mysqli_query($db, $query);
 $roomReservations = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 mysqli_close($db);
-
 ?>
 <!doctype html>
 <html lang="nl">
