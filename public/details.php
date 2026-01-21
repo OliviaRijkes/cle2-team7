@@ -29,17 +29,39 @@ mysqli_close($db);
     <link rel="stylesheet" href="assets/app.css">
     <link rel="stylesheet" href="assets/details.css">
     <script defer src="assets/darkmode.js"></script>
+    <script>
+        function detailSearch() {
+            var input = document.getElementById("detailSearchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("detailTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[4];
+                if (td) {
+                    textValue = td.textContent || td.innerText;
+                    if (textValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </head>
     <?php include __DIR__ . '/../includes/header.php'; ?>
 <body class="details_body">
     <section class="details_section">
         <div class="greetings">
             <h1>Hallo, <?= ucfirst($_SESSION['firstname'])?> </h1>
-
+            <div class="detail_input">
+                <input type="text" id="detailSearchInput" onkeyup="detailSearch()" placeholder="Zoek naar reservering...">
+            </div>
         </div>
         <div class="detail_table_div">
             <h2> Jouw Reserveringen </h2>
-            <table class="details_table_body">
+            <table id="detailTable" class="details_table_body">
                 <thead>
                     <tr>
                         <th>Begin tijd</th>
