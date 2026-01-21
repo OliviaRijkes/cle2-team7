@@ -1,8 +1,8 @@
 <header>
     <section>
-        <div class="logo_in_header">
+        <a href="header.php" class="logo_in_header">
             <img class="logo" src="Images/Logo-BMN-De-Klerk.jpg" alt="Logo BMN de klerk">
-        </div>
+        </a>
         <div class="dropdown_in_header">
             <div class="dropdown">
                 <button class="dropbtn"></button> <!-- Hier komt nog een foto -->

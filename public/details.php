@@ -33,6 +33,8 @@ mysqli_close($db);
     <meta charset="UTF-8">
     <title>Gereserveerde kamers</title>
     <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" href="assets/details.css">
+    <script defer src="assets/darkmode.js"></script>
 </head>
     <?php include __DIR__ . '/../includes/header.php'; ?>
 <body class="details_body">
@@ -56,11 +58,11 @@ mysqli_close($db);
                 <tbody>
                     <?php foreach ($roomReservations as $reservation) { ?>
                         <tr>
-                            <th> <?= $reservation['start_datetime']; ?> </th>
-                            <th> <?= $reservation['end_datetime']; ?> </th>
-                            <th> <?= $reservation['room_name'] ?> </th>
-                            <th> <?= $reservation['user_name'] ?> </th>
-                            <th> <?= $reservation['title'] ?> </th>
+                            <td> <?= $reservation['start_datetime']; ?> </td>
+                            <td> <?= $reservation['end_datetime']; ?> </td>
+                            <td> <?= $reservation['room_name'] ?> </td>
+                            <td> <?= $reservation['user_name'] ?> </td>
+                            <td> <?= $reservation['title'] ?> </td>
                         </tr>
                     <?php } ?>
 

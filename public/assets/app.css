@@ -101,75 +101,11 @@ footer {
     padding-left: 100px;
 }
 
-.login-container {
-    margin: 10vh 10vw;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.login-medewerker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    height: 80vh;
-    background-color: var(--primary-blue-light);
-}
-
-.login-email {
-    display: flex;
-    flex-direction: row;
-    width: 40vw;
-    margin: 5px;
-}
-
-.login-email-align-left {
-    text-align: end;
-    width: 20vw;
-    padding-right: 5px;
-}
-
-.login-email-align-right {
-    width: 20vw;
-}
-
-.login-password {
-    display: flex;
-    flex-direction: row;
-    width: 40vw;
-    margin: 5px;
-}
-
-.login-password-align-left {
-    text-align: end;
-    width: 20vw;
-    padding-right: 5px;
-}
-
-.login-password-align-right {
-    width: 20vw;
-}
-
-.form-submit {
-    display: flex;
-    justify-content: end;
-}
-
-input[type=submit] {
-    font-family: "Open Sans", sans-serif;
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid var(--primary-blue-dark);
-    background-color: var(--primary-blue-lightest);
-}
-
-
+/* Layout */
 .agenda_content {
     display: flex;
     justify-content: space-between;
     margin: 50px;
-
 }
 
 .room_info {
@@ -308,174 +244,33 @@ input[type=submit] {
 /* tabs boven kalender */
 .filter_view {
     display: flex;
-    text-align: center;
-    justify-content: space-around;
-    align-content: center;
-    background-size: contain;
+    justify-content: center;
     width: 32vw;
     padding-bottom: 0;
     font-family: Bahnschrift;
-
-
+    background: transparent;
 }
 
-.actual_agenda {
-    background-color: rgb(9, 174, 230);
-    height: 40vw;
-    border-width: 1px;
-    border-style: solid;
-
-}
-
-.actual_rooms {
-    
-}
-
-.actual_rooms a {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-left: 2vw;
-    border-left: 7px solid #968768;
-    background-color: #cbc3b4;
-}
-
-.actual_rooms a:hover {
-    background-color: #968768;
-    border-left: 7px solid #968768;
-}
-
-.actual_filter {
-    display: flex;
-    justify-content: center;
-}
-
-.button_day {
-    background-color: #e8e5df;
-    border-left: 7px solid #09aee6;
-    width: 14vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button_week {
-    background-color: #e8e5df;
-    border-left: 7px solid #09aee6;
-    width: 14vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button_month {
-    background-color: #e8e5df;
-    border-left: 7px solid #09aee6;
-    width: 14vw;
+/* tab look (Maand/Week/Dag) */
+.tab_btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-white-background);
+    border-left: 7px solid var(--primary-blue-light);
+    width: 10.7vw;
     height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000;
+    font-family: Bahnschrift;
+    font-size: 16px;
 }
 
-.button_day:hover {
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
+.tab_btn.is-active {
+    background-color: var(--primary-blue-light);
 }
-
-.button_week:hover {
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
-}
-
-.button_month:hover {
-    background-color: var(--primary-blue-lightest);
-    border-left: 7px solid var(--primary-blue-lightest);
-}
-
-/* css detail pagina */
-.details_section {
-    background-color: #cbc3b4;
-    display: flex;
-    margin: 5vw 10vw;
-    height: 30vw;
-    flex-direction: row;
-}
-
-.greetings {
-    padding: 0 15px;
-    display: flex;
-    flex-direction: row;
-}
-
-.details_table_body thead {
-    background-color: var(--primary-blue-dark);
-    color: var(--dark-text);
-}
-.details_table_body tbody {
-    background-color: var(--primary-white-background);
-}
-
-.detail_table_div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 3vw;
-}
-
-.details_table_body, tr, th {
-    border : 2px solid var(--primary-blue-dark);
-    border-collapse: collapse;
-    padding: 8px;
-}
-
-
-
-/* einde css detail pagina */
-
-@media (prefers-color-scheme: dark){
-    a:link, a:visited {
-        color: white;
-
-    }
-
-    .button-blue {
-        background-image: linear-gradient(to right, #42aed5, var(--primary-blue-light) 95%);
-        background-color: var(--primary-blue-lightest);
-    }
-
-    .dropbtn {
-        background-color: var(--primary-blue-light);
-    }
-
-    .dropdown-content {
-        background-color: var(--primary-white-background);
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .dropdown-content a {
-        color: black;
-    }
-
-    .dropdown-content a:hover {
-        background: #ddd;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: var(--primary-blue-dark);
-    }
-
-    footer {
-        background-color: #e8e5df;
-    }
-
-    .footer-copyright {
-        color: var(--primary-blue-dark);
-    }
-
-    .login-medewerker {
-        background-color: var(--primary-blue-light);
-    }
 
 .actual_agenda {
     background-color: var(--primary-white-background);
