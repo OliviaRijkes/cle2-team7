@@ -392,20 +392,45 @@ input[type=submit] {
     border-left: 7px solid var(--primary-blue-lightest);
 }
 
-.details_body {
-
-}
-
+/* css detail pagina */
 .details_section {
     background-color: #cbc3b4;
     display: flex;
     margin: 5vw 10vw;
     height: 30vw;
+    flex-direction: row;
 }
 
-.greetins {
+.greetings {
     padding: 0 15px;
+    display: flex;
+    flex-direction: row;
 }
+
+.details_table_body thead {
+    background-color: var(--primary-blue-dark);
+    color: var(--dark-text);
+}
+.details_table_body tbody {
+    background-color: var(--primary-white-background);
+}
+
+.detail_table_div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3vw;
+}
+
+.details_table_body, tr, th {
+    border : 2px solid var(--primary-blue-dark);
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+
+
+/* einde css detail pagina */
 
 @media (prefers-color-scheme: dark){
     a:link, a:visited {
