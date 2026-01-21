@@ -8,6 +8,11 @@
     --primary-blue-lightest: #44BFEA;
     --primary-white-background: #E8E5DF;
     --primary-brown: #968462;
+
+    --dark-text: #e8e5df;
+    --dark-background: #2c373f;
+    --dark-brown: #546645;
+
 }
 
 body {
@@ -15,7 +20,10 @@ body {
     margin: 0;
 }
 
-a:link, a:visited { color: white; text-decoration: none; }
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
 
 header section {
     display: flex;
@@ -24,9 +32,20 @@ header section {
     margin: 0 10vw;
 }
 
-.dropdown_in_header { display: flex; margin-top: 2vw; }
-.logo_in_header { width: 10vw; display: flex; }
-.logo { width: 100%; object-fit: contain; }
+.dropdown_in_header {
+    display: flex;
+    margin-top: 2vw;
+}
+
+.logo_in_header {
+    width: 10vw;
+    display: flex;
+}
+
+.logo {
+    width: 100%;
+    object-fit: contain;
+}
 
 .dropbtn {
     background-color: var(--primary-blue-light);
@@ -36,14 +55,17 @@ header section {
     border: none;
 }
 
-.dropdown { position: relative; display: inline-block; }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--primary-white-background);
     min-width: 220px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
 
@@ -54,9 +76,17 @@ header section {
     display: block;
 }
 
-.dropdown-content a:hover { background: #ddd; }
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown:hover .dropbtn { background-color: var(--primary-blue-dark); }
+.dropdown-content a:hover {
+    background: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--primary-blue-dark);
+}
 
 footer {
     display: flex;
@@ -174,30 +204,50 @@ input[type=submit] {
 }
 
 /* Rooms list met "Ruilen" rechts */
-.actual_rooms { margin-top: 10px; }
-.rooms_list { width: 100%; }
+.actual_rooms {
+    margin-top: 10px;
+}
 
-.room_row{
+.rooms_list {
     width: 100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+}
+
+.room_row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 14px 16px;
-    color:#fff;
+    color: #fff;
     border: none;
     cursor: pointer;
 }
 
-.room_left { font-weight:700; }
-.room_right { font-weight:700; }
+.room_left {
+    font-weight: 700;
+}
 
-.room_row.is-brown { background:#9a8a6a; }
-.room_row.is-cyan  { background:#09AEE6; }
-.room_row.is-navy  { background:#003256; }
+.room_right {
+    font-weight: 700;
+}
 
-.room_row:hover { filter: brightness(0.97); }
+.room_row.is-brown {
+    background: #9a8a6a;
+}
 
-.room_row.is-selected{
+.room_row.is-cyan {
+    background: #09AEE6;
+}
+
+.room_row.is-navy {
+    background: #003256;
+}
+
+.room_row:hover {
+    filter: brightness(0.97);
+}
+
+.room_row.is-selected {
     outline: 3px solid #00000055;
     box-shadow: inset 0 0 0 3px #ffffff55;
 }
@@ -211,26 +261,26 @@ input[type=submit] {
     color: #000;
 }
 
-.selected_room_line{
+.selected_room_line {
     margin: 10px 0;
-    color:#000;
+    color: #000;
     padding-left: 2vw;
     padding-right: 2vw;
 }
 
-.reserve_form{
+.reserve_form {
     padding-left: 2vw;
     padding-right: 2vw;
 }
 
-.reserve_form input{
+.reserve_form input {
     width: calc(100% - 0px);
     margin-top: 8px;
     padding: 8px 10px;
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-.reserve_btn{
+.reserve_btn {
     margin-top: 10px;
     width: 100%;
     border: none;
@@ -240,7 +290,11 @@ input[type=submit] {
     color: #fff;
     font-weight: 700;
 }
-.reserve_btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.reserve_btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
 /* rechter paneel */
 .agenda {
@@ -402,7 +456,7 @@ input[type=submit] {
     height: 40vw;
     border-width: 1px;
     border-style: solid;
-    border-color: rgba(0,0,0,0.15);
+    border-color: rgba(0, 0, 0, 0.15);
     padding: 0;
     overflow: hidden;
 }
@@ -455,9 +509,165 @@ input[type=submit] {
     border-color: #65bfe0;
 }
 
-.fc .fc-timegrid-divider { display: none; }
+.fc .fc-timegrid-divider {
+    display: none;
+}
 
 
 .fc .fc-event {
     border-width: 2px;
+}
+/*darkmode*/
+body.dark{
+    background-color: black;
+}
+.dark{
+    a:link, a:visited {
+        color: white;
+    }
+
+    .dropbtn {
+        background-color: var(--primary-blue-light);
+    }
+
+    .dropdown-content {
+        background-color: var(--primary-white-background);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+        color: black;
+    }
+
+    .dropdown-content a:hover {
+        background: #ddd;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: var(--primary-blue-dark);
+    }
+
+    footer {
+        background-color: #e8e5df;
+    }
+
+    .footer-copyright {
+        color: var(--primary-blue-dark);
+    }
+
+    /* top-left blauwe balk "Reserveren" */
+    .room_header {
+        background-color: var(--primary-blue-dark);
+    }
+
+    /* linker paneel */
+    .room_stuff {
+        background-color: var(--primary-white-background);
+    }
+
+    .room_row {
+        color: #fff;
+    }
+
+    .room_row.is-brown {
+        background: #9a8a6a;
+    }
+
+    .room_row.is-cyan {
+        background: #09AEE6;
+    }
+
+    .room_row.is-navy {
+        background: #003256;
+    }
+
+    .room_row:hover {
+    }
+
+    .room_row.is-selected {
+        outline: 3px solid #00000055;
+        box-shadow: inset 0 0 0 3px #ffffff55;
+    }
+
+    .actual_filter {
+        color: #000;
+    }
+
+    .selected_room_line {
+        color: #000;
+    }
+
+    .reserve_form input {
+        border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .reserve_btn {
+        background: var(--primary-blue-dark);
+        color: #fff;
+    }
+
+    /* tabs boven kalender */
+    .filter_view {
+        background: transparent;
+    }
+
+    /* tab look (Maand/Week/Dag) */
+    .tab_btn {
+        background-color: var(--primary-white-background);
+        border-left: 7px solid var(--primary-blue-light);
+        color: #000;
+    }
+
+    .tab_btn.is-active {
+        background-color: var(--primary-blue-light);
+    }
+
+    .actual_agenda {
+        background-color: var(--primary-white-background);
+    }
+
+    /* FullCalendar */
+    #calendar {
+        background: var(--primary-white-background);
+    }
+
+    /* FullCalendar styling */
+
+    /* header row donkerblauw */
+    .fc .fc-col-header {
+        background: var(--primary-blue-dark);
+    }
+
+    .fc .fc-col-header-cell-cushion {
+        color: #fff;
+    }
+
+    /* linker tijd-kolom donkerblauw */
+    .fc .fc-timegrid-axis {
+        background: var(--primary-blue-dark);
+    }
+
+    .fc .fc-timegrid-axis-cushion {
+        color: #fff;
+    }
+
+    /* grid achtergrond */
+    .fc .fc-scrollgrid,
+    .fc .fc-scrollgrid-section > td,
+    .fc .fc-timegrid-body,
+    .fc .fc-timegrid-cols,
+    .fc .fc-timegrid-col-frame {
+        background: var(--primary-white-background);
+    }
+
+    /* donkerblauwe kolomlijnen */
+    .fc .fc-scrollgrid td,
+    .fc .fc-scrollgrid th {
+        border-color: #1b5f86;
+    }
+
+    .fc .fc-timegrid-slot {
+        border-color: #65bfe0;
+    }
+
 }
