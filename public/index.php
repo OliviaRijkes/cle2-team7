@@ -22,9 +22,10 @@ $currentUserId = (int)$_SESSION['id'];
 
     <link rel="stylesheet" href="assets/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
+    <script defer src="assets/darkmode.js"></script>
 </head>
 <body>
-
+<button onclick="darkToggle()">darkmode</button>
 <header>
     <section>
         <div class="logo_in_header">
