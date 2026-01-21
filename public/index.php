@@ -25,7 +25,6 @@ $currentUserId = (int)$_SESSION['id'];
     <script defer src="assets/darkmode.js"></script>
 </head>
 <body>
-<button onclick="darkToggle()">darkmode</button>
 <header>
     <section>
         <div class="logo_in_header">
