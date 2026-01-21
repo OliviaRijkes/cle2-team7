@@ -9,7 +9,7 @@
                 <nav class="dropdown-content">
                     <a href="profile.php">Profiel</a>
                     <a href="index.php">Agenda</a>
-                    <a href="details.php?id=<?=$_SESSION['id']?>">Mijn reserveringen</a>
+                    <a href="details.php">Mijn reserveringen</a>
                     <a href="">Reserveringen veranderen</a>
                     <a href="logout.php">Uitloggen</a>
                 </nav>
