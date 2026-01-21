@@ -36,7 +36,7 @@ $currentUserId = (int)$_SESSION['id'];
                 <button class="dropbtn"></button>
                 <nav class="dropdown-content">
                     <a href="logout.php">Uitloggen</a>
-                    <a href="details.php?id=<?=$_SESSION['id']?>">Mijn reserveringen</a>
+                    <a href="details.php">Mijn reserveringen</a>
                     <a href="">Reserveringen veranderen</a>
                 </nav>
             </div>
