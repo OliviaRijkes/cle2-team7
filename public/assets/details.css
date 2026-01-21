@@ -28,7 +28,7 @@
     margin: 3vw;
 }
 
-.details_table_body, tr, th {
+.details_table_body, tr, th, td {
     border : 2px solid var(--primary-blue-dark);
     border-collapse: collapse;
     padding: 8px;
