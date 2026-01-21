@@ -10,7 +10,7 @@ require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/rooms.php';
 require_once __DIR__ . '/../includes/reservations.php';
 
-$rooms  = rooms_list($db);
+$rooms = rooms_list($db);
 $events = reservations_events($db);
 $currentUserId = (int)$_SESSION['id'];
 ?>
@@ -53,23 +53,28 @@ $currentUserId = (int)$_SESSION['id'];
                 <h2 class="heada">Zalen overzicht</h2>
 
                 <!-- app.js vult deze lijst -->
-                <div class="actual_rooms" id="roomsList"></div>
+                <div class="form_view">
+                    <div>
+                        <div class="actual_rooms" id="roomsList"></div>
 
-                <div class="actual_filter">Nieuwe reservering</div>
 
-                <form method="post" action="reservations.create.php" class="reserve_form" id="reserveForm">
-                    <input type="hidden" name="room_id" id="roomIdInput" value="">
-
-                    <div class="selected_room_line">
-                        Geselecteerde zaal: <strong id="selectedRoomName">Geen</strong>
+                        <div class="actual_filter">Nieuwe reservering</div>
                     </div>
 
-                    <input type="text" name="title" id="titleInput" placeholder="Titel" required disabled>
-                    <input type="datetime-local" name="start" id="startInput" required disabled>
-                    <input type="datetime-local" name="end" id="endInput" required disabled>
+                    <form method="post" action="reservations.create.php" class="reserve_form" id="reserveForm">
+                        <input type="hidden" name="room_id" id="roomIdInput" value="">
 
-                    <button type="submit" class="reserve_btn" id="reserveBtn" disabled>Reserveren</button>
-                </form>
+                        <div class="selected_room_line">
+                            Geselecteerde zaal: <strong id="selectedRoomName">Geen</strong>
+                        </div>
+
+                        <input type="text" name="title" id="titleInput" placeholder="Titel" required disabled>
+                        <input type="datetime-local" name="start" id="startInput" required disabled>
+                        <input type="datetime-local" name="end" id="endInput" required disabled>
+
+                        <button type="submit" class="reserve_btn" id="reserveBtn" disabled>Reserveren</button>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -91,7 +96,7 @@ $currentUserId = (int)$_SESSION['id'];
 
 <script>
     window.CURRENT_USER_ID = <?= (int)$currentUserId ?>;
-    window.ROOMS  = <?= json_encode($rooms, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+    window.ROOMS = <?= json_encode($rooms, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
     window.EVENTS = <?= json_encode($events, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 </script>
 

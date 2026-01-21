@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (reserveBtn) reserveBtn.disabled = !enabled;
     }
 
-     // Haalt de "selected" highlight weg van alle zaal-rows.
+    // Haalt de "selected" highlight weg van alle zaal-rows.
 
     function clearSelectionUI() {
         if (!roomsListEl) return;
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-     // Reset de gekozen zaal:
+    // Reset de gekozen zaal:
 
     function resetSelection() {
         if (roomIdInput) roomIdInput.value = "";
@@ -100,12 +100,32 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.appendChild(left);
             btn.appendChild(right);
 
+
+            var x = document.getElementById("reserveForm");
+            let z = 2;
+            if (z === 2) {
+                x.style.display = "none";
+            }
             btn.addEventListener("click", () => {
                 clearSelectionUI();
                 btn.classList.add("is-selected");
 
-                // Gekozen zaal id opslaan (nodig voor submit)
+                // Gekozen zaal id opslaan (nodig voor submit) en click to show reservering
+                let z = '';
+                let y = roomIdInput.value;
                 if (roomIdInput) roomIdInput.value = String(r.id);
+
+
+                if (x.style.display === "block") {
+
+                    if (y === (r.id))
+                        x.style.display = "none";
+                    else {
+                        x.style.display = "block";
+                    }
+                } else {
+                    x.style.display = "block";
+                }
 
                 // Tekst tonen bij "selected room"
                 if (selectedRoomNameEl) {
@@ -115,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Form aanzetten zodat je titel/start/eind kan invullen
                 setFormEnabled(true);
             });
+
 
             // Voeg de button toe aan de wrapper
             wrap.appendChild(btn);
@@ -181,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slotLabelInterval: "00:30:00",
 
         // Dag headers: alleen weekday
-        dayHeaderFormat: { weekday: "long" },
+        dayHeaderFormat: {weekday: "long"},
 
         // Events data
         events: allEvents
@@ -198,9 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnWeek = document.getElementById("btnViewWeek");
     const btnDay = document.getElementById("btnViewDay");
 
-      // Zet de actieve tab styling:
-      // haalt is-active weg bij alle knoppen
-      // zet is-active op de gekozen knop
+    // Zet de actieve tab styling:
+    // haalt is-active weg bij alle knoppen
+    // zet is-active op de gekozen knop
 
     function setActive(btn) {
         [btnMonth, btnWeek, btnDay].forEach((b) => b && b.classList.remove("is-active"));
