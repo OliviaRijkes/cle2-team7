@@ -52,7 +52,9 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <main>
-    <section>
+
+    <?php include __DIR__ . '/../includes/header.php'; ?>
+
         <div class="login-container">
             <div class="login-medewerker">
                 <p>Inloggen medewerker:</p>
@@ -82,7 +84,7 @@ if (isset($_POST['submit'])) {
                     </div>
                 </form>
             </div>
-    </section>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>
 </main>
 </body>
 </html>

@@ -101,6 +101,42 @@ footer {
     padding-left: 100px;
 }
 
+/*Login pagina*/
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-blue-middle);
+    width: 80vw;
+    height: 80vh;
+    padding: 20px;
+}
+
+.login-medewerker {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-blue-middle);
+}
+
+/*.login-email-align-left {*/
+/*    */
+/*}*/
+
+/*.login-email-align-right {*/
+
+/*}*/
+
+/*.login-password {*/
+
+/*}*/
+
+/*.login-password-align-left {*/
+
+/*}*/
+
+/*.login-password-align-right {*/
+
+/*}*/
+
 /* Layout */
 .agenda_content {
     display: flex;
