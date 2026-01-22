@@ -92,8 +92,13 @@ header section {
 footer {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 10vh;
+    margin: 0;
     background-color: #e8e5df;
+}
+
+footer p {
+    margin: 0;
 }
 
 .footer-copyright {
@@ -104,38 +109,47 @@ footer {
 /*Login pagina*/
 .login-container {
     display: flex;
-    flex-direction: column;
-    background-color: var(--primary-blue-middle);
-    width: 80vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 80vh;
-    padding: 20px;
+    width: 100vw;
 }
 
 .login-medewerker {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    background-color: var(--primary-blue-middle);
+
+    background-color: var(--primary-blue-light);
+    height: 60vh;
+    width: 80vw;
 }
 
-/*.login-email-align-left {*/
-/*    */
-/*}*/
+.login-title {
+    text-align: center;
+    align-self: center;
+}
 
-/*.login-email-align-right {*/
+.login-input-align {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-/*}*/
+.login-email {
+    display: flex;
+}
 
-/*.login-password {*/
+.login-password {
+ display: flex;
+}
 
-/*}*/
-
-/*.login-password-align-left {*/
-
-/*}*/
-
-/*.login-password-align-right {*/
-
-/*}*/
+.form-errors {
+    color: red;
+    text-transform: uppercase;
+    text-shadow: black 1px 1px;
+}
 
 /* Layout */
 .agenda_content {

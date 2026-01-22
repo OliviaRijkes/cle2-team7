@@ -51,40 +51,34 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
+<?php include __DIR__ . '/../includes/header.php'; ?>
 <main>
-
-    <?php include __DIR__ . '/../includes/header.php'; ?>
-
-        <div class="login-container">
-            <div class="login-medewerker">
-                <p>Inloggen medewerker:</p>
-                <form action="" method="post">
+    <div class="login-container">
+        <div class="login-medewerker">
+            <div class="login-title">
+                <h2>Inloggen medewerker:</h2>
+            </div>
+            <form action="" method="post">
+                <div class="login-input-align">
                     <div class="login-email">
-                        <div class="login-email-align-left">
-                            <label for="email">Email:</label>
-                        </div>
-                        <div class="login-email-align-right">
-                            <input type="text" name="email" id="email" value="<?=$email ??''?>">
-                        </div>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" value="<?= $email ?? '' ?>">
                     </div>
                     <div class="login-password">
-                        <div class="login-password-align-left">
-                            <label for="password">Wachtwoord:</label>
-                        </div>
-                        <div class="login-password-align-right">
-                            <input type="password" name="password" id="password" value="<?=$password ??''?>">
-                        </div>
+                        <label for="password">Wachtwoord:</label>
+                        <input type="password" name="password" id="password" value="<?= $password ?? '' ?>">
                     </div>
-                    <div class="form-errors">
-                        <p><?=$errors['email']??''?></p>
-                        <p><?=$errors['password']??''?></p>
-                    </div>
-                    <div class="form-submit">
-                        <input type="submit" name="submit" value="Log in">
-                    </div>
-                </form>
-            </div>
-    <?php include __DIR__ . '/../includes/footer.php'; ?>
+                </div>
+                <div class="form-errors">
+                    <p><?= $errors['email'] ?? '' ?></p>
+                    <p><?= $errors['password'] ?? '' ?></p>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" name="submit" value="Log in">
+                </div>
+            </form>
+        </div>
 </main>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 </body>
 </html>
