@@ -1,4 +1,18 @@
 <?php
+session_start();
+if (!isset($_SESSION["id"])) {
+    header("Location: login.php");
+    exit;
+}
+
+$id = $_SESSION["id"];
+require_once __DIR__ . '/../includes/db.php';
+$query = "SELECT * FROM users WHERE id = '$id'";
+$result = mysqli_query($db, $query);
+$user = mysqli_fetch_assoc($result);
+print_r($user);
+print_r($_SESSION);
+mysqli_close($db);
 ?>
 <!doctype html>
 <html lang="nl">
