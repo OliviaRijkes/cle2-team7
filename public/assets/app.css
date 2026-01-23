@@ -265,6 +265,7 @@ footer p {
     padding-right: 2vw;
     background-color: var(--primary-white-background);
     z-index: 3;
+
 }
 
 .reserve_form input {
@@ -288,6 +289,89 @@ footer p {
 .reserve_btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.filter_rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.filter_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24vw;
+    background-color: var(--primary-white-background);
+}
+
+.form_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.filter_form button {
+    background-color: #003256;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.btn-group button:hover {
+    background-color: #09AEE6;
+}
+
+.form_capacity {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    padding-bottom: 3%;
+
+}
+
+.form_digiboard {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    padding-bottom: 3%;
+
+}
+
+.form_digiboard select {
+    width: 11vw;
+}
+
+.form_sound_system {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    padding-bottom: 3%;
+
+}
+
+.form_sound_system select {
+    width: 11vw;
+}
+
+.form_surface {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    padding-bottom: 3%;
+
 }
 
 /* rechter paneel */

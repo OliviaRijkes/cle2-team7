@@ -43,15 +43,23 @@ CREATE TABLE rooms (
                        color VARCHAR(20) NOT NULL DEFAULT '#1e90ff',
 
     -- 1 = actief, 0 = niet actief
-                       is_active TINYINT(1) NOT NULL DEFAULT 1
+                       is_active TINYINT(1) NOT NULL DEFAULT 1,
+
+    -- 1 = wel, 0 = geen digibord
+                       digiboard TINYINT(1) NOT NULL DEFAULT 0,
+
+    -- Vierkante meter
+                       surface_area INT NOT NULL DEFAULT 0,
+    -- 1 = wel, 0 = geen sound system
+                       sound_system TINYINT(1) NOT NULL DEFAULT 0
 );
 
 -- Standaard zalen (met capacity)
-INSERT INTO rooms (name, capacity, color, is_active) VALUES
-                                                         ('Zaal 1', 20, '#1e90ff', 1),
-                                                         ('Zaal 2', 12, '#28a745', 1),
-                                                         ('Zaal 3', 8,  '#ffc107', 1),
-                                                         ('Zaal 4', 30, '#dc3545', 1);
+INSERT INTO rooms (name, capacity, color, is_active, digiboard, surface_area, sound_system) VALUES
+                                                         ('Zaal 1', 20, '#1e90ff', 1, 1, 54, 1),
+                                                         ('Zaal 2', 12, '#28a745', 1, 1, 36, 0),
+                                                         ('Zaal 3', 8,  '#ffc107', 1, 0, 24, 0),
+                                                         ('Zaal 4', 30, '#dc3545', 1, 0, 70, 1);
 
 
 -- =========================
