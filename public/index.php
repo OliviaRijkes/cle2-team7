@@ -25,25 +25,7 @@ $currentUserId = (int)$_SESSION['id'];
     <script defer src="assets/darkmode.js"></script>
 </head>
 <body>
-<header>
-    <section>
-        <div class="logo_in_header">
-            <img class="logo" src="Images/Logo-BMN-De-Klerk.jpg" alt="Logo BMN de klerk">
-        </div>
-
-        <div class="dropdown_in_header">
-            <div class="dropdown">
-                <button class="dropbtn"></button>
-                <nav class="dropdown-content">
-                    <a href="logout.php">Uitloggen</a>
-                    <a href="details.php">Mijn reserveringen</a>
-                    <a href="">Reserveringen veranderen</a>
-                </nav>
-            </div>
-        </div>
-    </section>
-</header>
-
+<?php include __DIR__ . '/../includes/header.php'; ?>
 <main>
     <section class="agenda_content">
         <div class="room_info">

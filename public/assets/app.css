@@ -92,13 +92,63 @@ header section {
 footer {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 10vh;
+    margin: 0;
     background-color: #e8e5df;
+}
+
+footer p {
+    margin: 0;
 }
 
 .footer-copyright {
     color: var(--primary-blue-dark);
     padding-left: 100px;
+}
+
+/*Login pagina*/
+.login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+}
+
+.login-medewerker {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--primary-blue-light);
+    height: 60vh;
+    width: 80vw;
+}
+
+.login-title {
+    text-align: center;
+    align-self: center;
+}
+
+.login-input-align {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-email {
+    display: flex;
+}
+
+.login-password {
+ display: flex;
+}
+
+.form-errors {
+    color: red;
+    text-transform: uppercase;
+    text-shadow: black 1px 1px;
 }
 
 /* Layout */
@@ -344,6 +394,65 @@ footer {
 
 .fc .fc-event {
     border-width: 2px;
+}
+
+.register {
+    main {
+        background-color: var(--primary-blue-light);
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: end;
+    }
+
+    main h2 {
+        margin: auto;
+    }
+
+    form {
+        padding: 10px 5px;
+    }
+
+    .input-error {
+        display: flex;
+
+    }
+
+    .input-error p {
+        margin: 0;
+        color: red;
+    }
+    button{
+        border: none;
+        background-color: var(--primary-blue-dark);
+        color: white;
+        padding: 5px;
+    }
+    button:hover{
+        background-color: var(--primary-blue-middle);
+    }
+}
+
+.register.dark {
+    label, input {
+        color: var(--dark-text);
+    }
+
+    input {
+        background-color: var(--dark-background);
+        border: var(--primary-blue-light);
+
+    }
+
+    main {
+        background-color: var(--primary-blue-dark);
+    }
+    button{
+        background-color: var(--dark-brown);
+    }
+    button:hover{
+        background-color: var(--primary-brown);
+    }
 }
 
 /*darkmode*/
