@@ -1,21 +1,27 @@
 /* css detail pagina */
+
+
 .details_section {
-    background-color: #cbc3b4;
+    background-color: var(--primary-white-background);
     display: flex;
-    margin: 5vw 10vw;
+    margin: 0 10vw 5vw;
     height: 30vw;
     flex-direction: row;
 }
 
 .greetings {
-    padding: 0 15px;
-    display: flex;
+    padding: 0 10px;
+    display: inline-block;
     flex-direction: column;
+    background-color: var(--primary-blue-dark);
+    color: white;
+    margin-left: 12vw;
+    margin-top: 5vw;
 }
 
 .details_table_body thead {
     background-color: var(--primary-blue-dark);
-    color: var(--dark-text);
+    color: white;
 }
 .details_table_body tbody {
     background-color: var(--primary-white-background);
@@ -28,10 +34,34 @@
     margin: 3vw;
 }
 
-.details_table_body, tr, th, td {
+.details_table_body, tr, td, th {
     border : 2px solid var(--primary-blue-dark);
     border-collapse: collapse;
     padding: 8px;
+}
+tbody, td {
+    background-color: white;
+}
+.detail_input {
+    margin: 15px;
+}
+
+.lower_div {
+    background-color: var(--primary-brown);
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    padding: 15px;
+    height: 100px;
+    top: 7vw;
+    right: 7vw;
+}
+.lower_div h2 {
+    margin: 0;
+}
+
+.container {
+    position: relative;
 }
 /*darkmode*/
 .dark{

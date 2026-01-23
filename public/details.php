@@ -52,17 +52,22 @@ mysqli_close($db);
 </head>
     <?php include __DIR__ . '/../includes/header.php'; ?>
 <body class="details_body">
-    <section class="details_section">
+    <section class="container">
         <div class="greetings">
-            <h1>Hallo, <?= ucfirst($_SESSION['firstname'])?> </h1>
-            <div class="detail_input">
-                <input type="text" id="detailSearchInput" onkeyup="detailSearch()" placeholder="Zoek naar reservering...">
-            </div>
+            <h1>Hallo, <?= ucfirst($_SESSION['firstname']) ?> </h1>
         </div>
-        <div class="detail_table_div">
-            <h2> Jouw Reserveringen </h2>
-            <table id="detailTable" class="details_table_body">
-                <thead>
+        <div class="lower_div">
+            <h2>geschiedenis</h2>
+        </div>
+        <section class="details_section">
+            <div class="detail_input">
+                <input type="text" id="detailSearchInput" onkeyup="detailSearch()"
+                       placeholder="Zoek naar reservering...">
+            </div>
+            <div class="detail_table_div">
+                <h2> Jouw Reserveringen </h2>
+                <table id="detailTable" class="details_table_body">
+                    <thead>
                     <tr>
                         <th>Begin tijd</th>
                         <th>Eind tijd</th>
@@ -70,8 +75,8 @@ mysqli_close($db);
                         <th>Personen</th>
                         <th>Title</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <?php foreach ($roomReservations as $reservation) { ?>
                         <tr>
                             <td> <?= $reservation['start_datetime']; ?> </td>
@@ -81,10 +86,10 @@ mysqli_close($db);
                             <td> <?= $reservation['title'] ?> </td>
                         </tr>
                     <?php } ?>
-
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </section>
 </body>
 
