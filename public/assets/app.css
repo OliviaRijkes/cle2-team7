@@ -396,6 +396,65 @@ footer p {
     border-width: 2px;
 }
 
+.register {
+    main {
+        background-color: var(--primary-blue-light);
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: end;
+    }
+
+    main h2 {
+        margin: auto;
+    }
+
+    form {
+        padding: 10px 5px;
+    }
+
+    .input-error {
+        display: flex;
+
+    }
+
+    .input-error p {
+        margin: 0;
+        color: red;
+    }
+    button{
+        border: none;
+        background-color: var(--primary-blue-dark);
+        color: white;
+        padding: 5px;
+    }
+    button:hover{
+        background-color: var(--primary-blue-middle);
+    }
+}
+
+.register.dark {
+    label, input {
+        color: var(--dark-text);
+    }
+
+    input {
+        background-color: var(--dark-background);
+        border: var(--primary-blue-light);
+
+    }
+
+    main {
+        background-color: var(--primary-blue-dark);
+    }
+    button{
+        background-color: var(--dark-brown);
+    }
+    button:hover{
+        background-color: var(--primary-brown);
+    }
+}
+
 /*darkmode*/
 body.dark {
     background-color: black;
