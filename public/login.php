@@ -51,7 +51,16 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<header>
+    <section>
+        <a href="header.php" class="logo_in_header">
+            <img class="logo" src="Images/Logo-BMN-De-Klerk.jpg" alt="Logo BMN de klerk">
+        </a>
+        <div>
+            <!--        Div flex placeholder-->
+        </div>
+    </section>
+</header>
 <main>
     <div class="login-container">
         <div class="login-medewerker">
