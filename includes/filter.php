@@ -47,34 +47,6 @@ if (isset($_POST['super'])) {
         $result = mysqli_query($db, $query);
     }
 
-    //else {
-//        if ($digiboard === '') {
-//
-//            $errors['digiboard'] = "Dit veld is verplicht";
-//            require_once '../includes/db.php';
-//            $query = "SELECT * FROM `rooms` WHERE capacity > '$capacity' - 1 AND is_active = 1 AND surface_area > '$surface' - 1 AND sound_system = '$sound_system' AND digi_board IN (0, 1)";
-//
-//            $result = mysqli_query($db, $query);
-//            $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
-//
-//            $result = mysqli_query($db, $query);
-//        } else {
-//            if ($sound_system === '') {
-//
-//
-//                $errors['sound_system'] = "Dit veld is verplicht";
-//                print_r($errors);
-//                require_once '../includes/db.php';
-//                $query = "SELECT * FROM `rooms` WHERE capacity > '$capacity' AND is_active = 1 AND surface_area > '$surface' - 1 AND digiboard = '$digiboard' AND sound_system IN (0, 1)";
-//
-//                $result = mysqli_query($db, $query);
-//                $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
-//
-//                $result = mysqli_query($db, $query);
-//            }
-//        }
-//    }
-
 
     if ($check === true) {
 
