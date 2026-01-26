@@ -2,7 +2,7 @@
 
 /** @var mysqli $db */
 require_once '../includes/db.php';
-// example kamers, de 6 en 7 zijn de id in de database, dit kan later met een get request opgehaald vorden
+// example kamers, de 6 en 7 zijn de id in de database, dit kan later met een get request opgehaald worden
 $example1 = 6;
 $example2 = 7;
 
@@ -31,10 +31,10 @@ $end2 = $test[1][5];
 if (isset($_POST['submit'])) {
     //update de aangepaste zalen
     $query1_2 = "UPDATE reservations 
-                 SET user_id = '$user2'
+                 SET room_id = '$room2'
                  WHERE id = '$example1'";
     $query2_1 = "UPDATE reservations 
-                 SET user_id = '$user1'
+                 SET room_id = '$room1'
                  WHERE id = '$example2'";
 $result1_2 = mysqli_query($db, $query1_2);
 $result2_1 = mysqli_query($db, $query2_1);
