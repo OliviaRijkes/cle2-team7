@@ -170,6 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    let swapA = null;
+
     // Maak de FullCalendar instance aan
     const calendar = new FullCalendar.Calendar(calEl, {
         // Start view;
@@ -211,7 +213,20 @@ document.addEventListener("DOMContentLoaded", () => {
         dayHeaderFormat: {weekday: "long"},
 
         // Events data
-        events: allEvents
+        events: allEvents,
+
+        eventClick: (info) => {
+            const id = info.event.id;
+
+            if (swapA === null) {
+                swapA = id; // eerste klik
+                return;
+            }
+
+            // tweede klik -> ruilen.php openen
+            window.location.href = `ruilen.php?a=${swapA}&b=${id}`;
+        }
+
     });
 
     // Render de kalender op de pagina

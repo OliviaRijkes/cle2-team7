@@ -1,15 +1,27 @@
 <?php
 
-/** @var mysqli $db */
-require_once '../includes/db.php';
-// example kamers, de 6 en 7 zijn de id in de database, dit kan later met een get request opgehaald worden
-$example1 = 6;
-$example2 = 7;
+session_start();
+if (!isset($_SESSION["id"])) {
+    header("Location: login.php");
+    exit;
+}
 
+/** @var mysqli $db */
+require_once __DIR__ . '/../includes/db.php';
+
+
+// example kamers, de 6 en 7 zijn de id in de database, dit kan later met een get request opgehaald worden
+$example1 = (int)($_GET['a'] ?? 6);
+$example2 = (int)($_GET['b'] ?? 7);
 
 
 // query om de twee zalen op te halen,
-$query = "SELECT * FROM reservations WHERE id in ('$example1', '$example2')";
+$query = "
+    SELECT id, room_id, user_id, title, start_datetime, end_datetime
+    FROM reservations
+    WHERE id IN ($example1, $example2)
+";
+
 // display de 2 zalen
 $result = mysqli_query($db, $query);
 $test = mysqli_fetch_all($result);
@@ -36,9 +48,20 @@ if (isset($_POST['submit'])) {
     $query2_1 = "UPDATE reservations 
                  SET room_id = '$room1'
                  WHERE id = '$example2'";
-$result1_2 = mysqli_query($db, $query1_2);
-$result2_1 = mysqli_query($db, $query2_1);
+    $result1_2 = mysqli_query($db, $query1_2);
+    $result2_1 = mysqli_query($db, $query2_1);
 
+    mysqli_query($db, $query1_2);
+    mysqli_query($db, $query2_1);
+
+    header("Location: index.php");
+    exit;
+}
+
+// afwijzen -> terug
+if (isset($_POST['reject'])) {
+    header("Location: index.php");
+    exit;
 }
 
 
@@ -75,8 +98,7 @@ $result2_1 = mysqli_query($db, $query2_1);
     </section>
     <form action="" method="post">
     <button type="submit" name="submit"> Akkoord </button>
-    <button> Afwijzen </button>
+    <button type="submit" name="reject" value="1"> Afwijzen </button>
     </form>
 </body>
-
 </html>
