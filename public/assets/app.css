@@ -408,7 +408,10 @@ footer p {
     font-family: Bahnschrift;
     font-size: 16px;
 }
-
+.tab_btn:hover{
+    background-color: var(--primary-blue-lightest);
+    border-left: var(--primary-blue-lightest);
+}
 .tab_btn.is-active {
     background-color: var(--primary-blue-light);
 }
@@ -539,6 +542,21 @@ footer p {
     }
 }
 
+.profile{
+    main{
+        height: 80vh;
+    }
+    table{
+        background-color: var(--primary-blue-light);
+        padding: 10px;
+    }
+}
+.profile.dark{
+    table{
+        background-color: var(--primary-blue-middle);
+        color: var(--dark-text);
+    }
+}
 /*darkmode*/
 body.dark {
     background-color: black;
