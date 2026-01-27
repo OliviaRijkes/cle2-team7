@@ -156,6 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Calendar (FullCalendar)
 
+
+
     // Element waar de kalender in moet komen
     const calEl = document.getElementById("calendar");
 
@@ -173,6 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Start view;
         initialView: "timeGridWeek",
 
+
+
         locale: "nl",
 
         // Header toolbar uit (wij gebruiken eigen knoppen/tabs)
@@ -180,6 +184,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Laat een "nu" lijn zien in de agenda
         nowIndicator: true,
+
+        // Eerst getoonde dag in de agenda
+        firstDay: 1,
 
         // Geen all-day balk
         allDaySlot: false,
