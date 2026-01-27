@@ -9,22 +9,27 @@ if (!isset($_SESSION["id"])) {
 /** @var mysqli $db */
 require_once __DIR__ . '/../includes/db.php';
 
+if ($_GET['a'] > $_GET['b']) {
+    $example1 = (int)($_GET['b']);
+    $example2 = (int)($_GET['a']);
+} else {
+    $example1 = (int)($_GET['a']);
+    $example2 = (int)($_GET['b']);
+}
 
-// example kamers, de 6 en 7 zijn de id in de database, dit kan later met een get request opgehaald worden
-$example1 = (int)($_GET['a'] ?? 6);
-$example2 = (int)($_GET['b'] ?? 7);
+
 
 
 // query om de twee zalen op te halen,
 $query = "
-    SELECT id, room_id, user_id, title, start_datetime, end_datetime
+    SELECT *
     FROM reservations
-    WHERE id IN ($example1, $example2)
-";
+    WHERE id IN ($example1, $example2)";
 
 // display de 2 zalen
 $result = mysqli_query($db, $query);
 $test = mysqli_fetch_all($result);
+
 // kamers in aparte arrays
 $room1 = $test[0][1];
 $user1 = $test[0][2];
@@ -82,19 +87,19 @@ if (isset($_POST['reject'])) {
 <body>
     <h1>kamer 1</h1>
     <section>
-        <h3> Kamer:     <?= $room1; ?> </h3>
-        <h3> Gebruiker: <?= $user1; ?> </h3>
-        <h3> Title:     <?= $title1; ?> </h3>
-        <h3> Begin tijd:<?= $start1; ?> </h3>
-        <h3> Eind tijd: <?= $end1; ?> </h3>
+        <p> Kamer:     <?= $room1; ?> </p>
+        <p> Gebruiker: <?= $user1; ?> </p>
+        <p> Title:     <?= $title1; ?> </p>
+        <p> Begin tijd:<?= $start1; ?> </p>
+        <p> Eind tijd: <?= $end1; ?> </p>
     </section>
     <h1>kamer 2</h1>
     <section>
-        <h3> Kamer:     <?= $room2 ?> </h3>
-        <h3> Gebruiker: <?= $user2 ?> </h3>
-        <h3> Title:     <?= $title2 ?> </h3>
-        <h3> Begin tijd:<?= $start2 ?> </h3>
-        <h3> Eind tijd: <?= $end2 ?> </h3>
+        <p> Kamer:     <?= $room2 ?> </p>
+        <p> Gebruiker: <?= $user2 ?> </p>
+        <p> Title:     <?= $title2 ?> </p>
+        <p> Begin tijd:<?= $start2 ?> </p>
+        <p> Eind tijd: <?= $end2 ?> </p>
     </section>
     <form action="" method="post">
     <button type="submit" name="submit"> Akkoord </button>
