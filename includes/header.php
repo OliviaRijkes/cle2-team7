@@ -11,7 +11,6 @@
                     <a href="logout.php">Uitloggen</a>
                     <a href="index.php">Agenda</a>
                     <a href="details.php">Mijn reserveringen</a>
-                    <a href="">Reserveringen veranderen</a>
                     <?php if ($_SESSION['is_admin'] == 1) { ?>
                         <a href="register.php">registreer medewerker/admin</a>
                     <?php } ?>

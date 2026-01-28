@@ -68,7 +68,7 @@ tbody, td {
     h1, h2, p, td{
         color: var(--dark-text);
     }
-    .details_section {
+    .details_section, td {
         background-color: var(--dark-background);
     }
 
@@ -80,7 +80,7 @@ tbody, td {
         background-color: var(--dark-background);
     }
 
-    .details_table_body, tr, th {
+    .details_table_body, tr, th, td {
         border : 2px solid var(--primary-blue-middle);
     }
 }
