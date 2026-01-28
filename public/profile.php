@@ -1,4 +1,21 @@
 <?php
+session_start();
+if (!isset($_SESSION["id"])) {
+    header("Location: login.php");
+    exit;
+}
+
+$id = $_SESSION["id"];
+require_once __DIR__ . '/../includes/db.php';
+$query = "SELECT * FROM users WHERE id = '$id'";
+$result = mysqli_query($db, $query);
+$user = mysqli_fetch_assoc($result);
+mysqli_close($db);
+if ($user['is_admin'] == 1) {
+    $function = 'admin';
+} elseif ($user['is_admin'] == 0) {
+    $function = 'medewerker';
+}
 ?>
 <!doctype html>
 <html lang="nl">
@@ -11,10 +28,32 @@
     <link rel="stylesheet" href="assets/app.css">
     <script defer src="assets/darkmode.js"></script>
 </head>
-<body>
+<body class="profile">
 <?php include __DIR__ . '/../includes/header.php'; ?>
+<main>
+    <table>
+        <tbody>
+        <tr>
+            <th>Voornaam</th>
+            <td><?= $user['firstname'] ?></td>
+        </tr>
+        <tr>
+            <th>Achternaam</th>
+            <td><?= $user['lastname'] ?></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><?= $user['email'] ?></td>
+        </tr>
+        <tr>
+            <th>Functie</th>
+            <td><?= $function ?></td>
+        </tr>
+        </tbody>
+    </table>
+    <button onclick="darkToggle()">darkmode</button>
+</main>
 
-<button onclick="darkToggle()">darkmode</button>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
 </body>
 </html>

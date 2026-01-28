@@ -41,6 +41,10 @@ $currentUserId = (int)$_SESSION['id'];
 
 
                         <div class="actual_filter">Nieuwe reservering</div>
+
+                        <div>
+                            <?php include __DIR__ . '/../includes/filter.php' ?>
+                        </div>
                     </div>
 
                     <form method="post" action="reservations.create.php" class="reserve_form" id="reserveForm">

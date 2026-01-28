@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startInput = document.getElementById("startInput");
     const endInput = document.getElementById("endInput");
     const reserveBtn = document.getElementById("reserveBtn");
+    const reserveForm = document.getElementById("reserveForm");
 
     /**
      * Zet het formulier aan/uit.
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.appendChild(right);
 
 
-            var x = document.getElementById("reserveForm");
+            var x = reserveForm;
             let z = 2;
             if (z === 2) {
                 x.style.display = "none";
@@ -156,6 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Calendar (FullCalendar)
 
+
+
     // Element waar de kalender in moet komen
     const calEl = document.getElementById("calendar");
 
@@ -168,10 +171,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    let swapA = null;
+
     // Maak de FullCalendar instance aan
     const calendar = new FullCalendar.Calendar(calEl, {
         // Start view;
         initialView: "timeGridWeek",
+
+
 
         locale: "nl",
 
@@ -180,6 +187,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Laat een "nu" lijn zien in de agenda
         nowIndicator: true,
+
+        // Eerst getoonde dag in de agenda
+        firstDay: 1,
 
         // Geen all-day balk
         allDaySlot: false,
@@ -200,11 +210,29 @@ document.addEventListener("DOMContentLoaded", () => {
         // Labels links ook per 30 minuten
         slotLabelInterval: "00:30:00",
 
+        slotLabelFormat: {
+            hour: '2-digit',
+            minute: '2-digit'
+        },
+
         // Dag headers: alleen weekday
         dayHeaderFormat: {weekday: "long"},
 
         // Events data
-        events: allEvents
+        events: allEvents,
+
+        eventClick: (info) => {
+            const id = info.event.id;
+
+            if (swapA === null) {
+                swapA = id; // eerste klik
+                return;
+            }
+
+            // tweede klik -> ruilen.php openen
+            window.location.href = `ruilen.php?a=${swapA}&b=${id}`;
+        }
+
     });
 
     // Render de kalender op de pagina
@@ -253,4 +281,18 @@ document.addEventListener("DOMContentLoaded", () => {
             resetSelection();
         });
     }
+
+    // Sluit reserveForm als je buiten de zaal-lijst en buiten het form klikt
+    document.addEventListener("click", (e) => {
+        if (!reserveForm) return;
+
+        const clickedInsideForm = reserveForm.contains(e.target);
+        const clickedInsideRooms = roomsListEl && roomsListEl.contains(e.target);
+
+        if (!clickedInsideForm && !clickedInsideRooms) {
+            reserveForm.style.display = "none";
+            resetSelection();
+        }
+    });
+
 });
