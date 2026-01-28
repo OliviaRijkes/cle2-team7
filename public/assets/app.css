@@ -490,7 +490,7 @@ footer p {
     main {
         background-color: var(--primary-blue-light);
         max-width: 1000px;
-        margin: 0 auto;
+        margin: 10vh auto;
         display: flex;
         justify-content: end;
     }
@@ -552,7 +552,9 @@ footer p {
 /*profile page*/
 .profile {
     main {
-        height: 80vh;
+        height: 60vh;
+        align-content: center;
+        margin: 0 30vw;
     }
 
     table {
@@ -708,5 +710,13 @@ body.dark {
 
     .fc-event-main {
         background-color: var(--primary-blue-middle);
+    }
+    /*login*/
+    .login-medewerker{
+        background-color: var(--primary-blue-middle);
+        color: var(--dark-text);
+        form{
+            background-color: var(--primary-blue-middle);
+        }
     }
 }

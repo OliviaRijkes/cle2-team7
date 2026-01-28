@@ -49,6 +49,7 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="assets/app.css">
+    <script defer src="assets/darkmode.js"></script>
 </head>
 <body>
 <header>
@@ -58,6 +59,8 @@ if (isset($_POST['submit'])) {
         </a>
         <div>
             <!--        Div flex placeholder-->
+            <button onclick="darkToggle()">darkmode</button>
+
         </div>
     </section>
 </header>
