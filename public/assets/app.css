@@ -532,7 +532,7 @@ footer p {
 
     input {
         background-color: var(--dark-background);
-        border: var(--primary-blue-light);
+        border: solid 1px var(--primary-blue-light);
 
     }
 
