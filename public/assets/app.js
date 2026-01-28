@@ -210,6 +210,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Labels links ook per 30 minuten
         slotLabelInterval: "00:30:00",
 
+        slotLabelFormat: {
+            hour: '2-digit',
+            minute: '2-digit'
+        },
+
         // Dag headers: alleen weekday
         dayHeaderFormat: {weekday: "long"},
 
