@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startInput = document.getElementById("startInput");
     const endInput = document.getElementById("endInput");
     const reserveBtn = document.getElementById("reserveBtn");
+    const reserveForm = document.getElementById("reserveForm");
 
     /**
      * Zet het formulier aan/uit.
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.appendChild(right);
 
 
-            var x = document.getElementById("reserveForm");
+            var x = reserveForm;
             let z = 2;
             if (z === 2) {
                 x.style.display = "none";
@@ -275,4 +276,18 @@ document.addEventListener("DOMContentLoaded", () => {
             resetSelection();
         });
     }
+
+    // Sluit reserveForm als je buiten de zaal-lijst en buiten het form klikt
+    document.addEventListener("click", (e) => {
+        if (!reserveForm) return;
+
+        const clickedInsideForm = reserveForm.contains(e.target);
+        const clickedInsideRooms = roomsListEl && roomsListEl.contains(e.target);
+
+        if (!clickedInsideForm && !clickedInsideRooms) {
+            reserveForm.style.display = "none";
+            resetSelection();
+        }
+    });
+
 });
