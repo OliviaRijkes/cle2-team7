@@ -31,13 +31,13 @@ mysqli_close($db);
     <script defer src="assets/darkmode.js"></script>
     <script>
         function detailSearch() {
-            var input = document.getElementById("detailSearchInput");
-            var filter = input.value.toUpperCase();
-            var table = document.getElementById("detailTable");
-            var tr = table.getElementsByTagName("tr");
+            let input = document.getElementById("detailSearchInput");
+            let filter = input.value.toUpperCase();
+            let table = document.getElementById("detailTable");
+            let tr = table.getElementsByTagName("tr");
 
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[4];
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
                 if (td) {
                     textValue = td.textContent || td.innerText;
                     if (textValue.toUpperCase().indexOf(filter) > -1) {
@@ -48,50 +48,78 @@ mysqli_close($db);
                 }
             }
         }
+        function sortTable(column) {
+            let table, rows, switching, j, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("detailTable");
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (j = 1; j < (rows.length - 1); j++) {
+                    shouldSwitch = false;
+                    x = rows[j].getElementsByTagName("td")[column];
+                    y = rows[j + 1].getElementsByTagName("td")[column];
+                    if(dir === "asc") {
+                        if(x.innerHTML.toLowerCase().localeCompare(y.innerHTML.toLowerCase()) < 0 ) {
+                            shouldSwitch = true;
+                        }
+                        else if (dir === "desc") {
+                            if (x.innerHTML.toLowerCase().localeCompare(y.innerHTML.toLowerCase()) > 0) {
+                                shouldSwitch = true;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[j].parentNode.insertBefore(rows[j + 1], rows[j]);
+                        switching = true;
+                        switchcount++;
+                    } else {
+                        if (switchcount === 0 && dir === "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+        }
     </script>
 </head>
-    <?php include __DIR__ . '/../includes/header.php'; ?>
-<body class="details_body">
-    <section class="container">
-        <div class="greetings">
-            <h1>Hallo, <?= ucfirst($_SESSION['firstname']) ?> </h1>
-        </div>
-        <div class="lower_div">
-            <h2>geschiedenis</h2>
-        </div>
+<body>
+<?php include __DIR__ . '/../includes/header.php'; ?>
+    <main>
         <section class="details_section">
-            <div class="detail_input">
-                <input type="text" id="detailSearchInput" onkeyup="detailSearch()"
-                       placeholder="Zoek naar reservering...">
+            <div class="greetings">
+                <h1>Hallo, <?= ucfirst($_SESSION['firstname']) ?> </h1>
+                <div class="detail_input">
+                    <input type="text" id="detailSearchInput" onkeyup="detailSearch()" placeholder="Zoek naar reservering...">
+                </div>
             </div>
             <div class="detail_table_div">
                 <h2> Jouw Reserveringen </h2>
                 <table id="detailTable" class="details_table_body">
                     <thead>
                     <tr>
-                        <th>Begin tijd</th>
-                        <th>Eind tijd</th>
-                        <th>Zaal</th>
-                        <th>Personen</th>
-                        <th>Title</th>
+                        <th onclick="sortTable(0)">Titel</th>
+                        <th onclick="sortTable(1)">Zaal</th>
+                        <th onclick="sortTable(2)">Begin tijd</th>
+                        <th onclick="sortTable(3)">Eind tijd</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php foreach ($roomReservations as $reservation) { ?>
                         <tr>
+                            <td> <?= $reservation['title'] ?> </td>
+                            <td> <?= $reservation['room_name'] ?> </td>
                             <td> <?= $reservation['start_datetime']; ?> </td>
                             <td> <?= $reservation['end_datetime']; ?> </td>
-                            <td> <?= $reservation['room_name'] ?> </td>
-                            <td> <?= $reservation['user_name'] ?> </td>
-                            <td> <?= $reservation['title'] ?> </td>
                         </tr>
                     <?php } ?>
                     </tbody>
                 </table>
             </div>
         </section>
-    </section>
+    </main>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>
 </body>
-
-    <?php include __DIR__ . '/../includes/footer.php';?>
 </html>
