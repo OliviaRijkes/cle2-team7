@@ -68,12 +68,7 @@ if (isset($_POST['super'])) {
 
 }
 if (isset($_POST['reset'])) {
-    $host = '127.0.0.1';
-    $username = 'root';
-    $password = '';
-    $database = 'bouw_reserveringen';
-
-    $db = mysqli_connect($host, $username, $password, $database);
+    require_once '../includes/db.php';
 
     $query = "SELECT * FROM `rooms`";
 
